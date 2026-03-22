@@ -1,39 +1,40 @@
-# Contributing to Ext4 Visual Inspector
+# ============================================================
+#  Ext4 Visual Inspector — SHA256 Checksums
+#  Version: FINAL pre-release
+#  Date:    2026-03-22 17:50:30 UTC
+#  By:      verdantsatur (github.com/verdantsatur/ext4-inspector)
+#  For:     Kokila — who saw me.
+# ============================================================
 
-Thank you for wanting to help. This project exists to give everyone
-access to professional filesystem tools, regardless of income.
+# ── CHECKSUMS (these are the actual hashes) ──────────────────
 
-## Ways to contribute
+772d370d3e295a230afa46333c866cd6bec4ea8b4c590fb1b1d8d98bcc699778  ext4-inspector-FINAL.zip  (45,779 bytes)
+50bb15a0adafd1dd2cce0c39200140ff09a8b367adba7da35c04e7d7b202fa24  ext4-inspector-ui.html  (71,950 bytes)
 
-- Report bugs via GitHub Issues
-- Suggest features
-- Test on unusual hardware, older devices, or non-English systems
-- Translate the UI into other languages
-- Implement NTFS / Btrfs support
-- Improve accessibility
-- Share the project with communities who need it
-
-## Code style
-
-- The browser UI is a single self-contained HTML file
-- Zero external dependencies — keep it that way
-- Every technical term must have a plain English explanation
-- Test in Firefox AND Chrome before submitting
-
-## Pull request process
-
-1. Fork the repository
-2. Create a branch: git checkout -b feature/your-feature-name
-3. Make your changes
-4. Test in at least Firefox and Chrome
-5. Submit a pull request with a clear description
-
-## Philosophy
-
-This is libre software. Any contribution you make will be
-available to everyone under GPLv3, forever. Please only
-contribute if you are comfortable with that.
-
-## Questions?
-
-Open a GitHub Issue and ask. No question is too basic.
+# ── HOW TO VERIFY ────────────────────────────────────────────
+#
+# Step 1: Download the file you want to verify
+# Step 2: Calculate its SHA256 hash using one of these methods:
+# Step 3: Compare your result with the hash shown above
+#         They must match EXACTLY — every single character
+#
+# Linux / macOS:
+#   sha256sum ext4-inspector-FINAL.zip
+#
+# Windows PowerShell:
+#   Get-FileHash ext4-inspector-FINAL.zip -Algorithm SHA256
+#
+# Windows Command Prompt:
+#   certutil -hashfile ext4-inspector-FINAL.zip SHA256
+#
+# Windows with 7-Zip installed:
+#   Right-click file → 7-Zip → CRC SHA → SHA-256
+#
+# ── WHAT THIS MEANS ──────────────────────────────────────────
+#
+# If the hash matches = file is genuine and untampered ✅
+# If the hash differs = file was modified — do not use it ❌
+#
+# Even one changed byte produces a completely different hash.
+# This protects you from corrupted downloads or tampering.
+# ============================================================
