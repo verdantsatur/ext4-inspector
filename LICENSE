@@ -3,6 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="
+  default-src 'none';
+  script-src 'self' 'unsafe-inline';
+  style-src 'self' 'unsafe-inline';
+  img-src 'self' data:;
+  font-src 'self';
+  connect-src 'none';
+  frame-src 'none';
+  object-src 'none';
+  base-uri 'self';
+  form-action 'none';
+">
 <title>Ext4 Visual Inspector — Free/Libre Tool</title>
 <style>
 /* ── Reset & base ─────────────────────────────────────── */
@@ -527,6 +539,19 @@ const BLOCK_SIZE = 4096;
 
 // ── Utility ────────────────────────────────────────────────────
 const $ = id => document.getElementById(id);
+
+// Security: sanitise any string before injecting into innerHTML
+// Prevents XSS if a malicious JSON file contains HTML in filenames
+function sanitise(str) {
+  if(str === null || str === undefined) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#x27;')
+    .replace(/`/g, '&#x60;');
+}
 const fmtSize = b => {
   if(b===0) return '0 B';
   if(b<1024) return b+' B';
@@ -735,7 +760,7 @@ function renderTree() {
       `<span class="tr-exp">${hasKids?(isExp?'▾':'▸'):''}</span>`+
       `<span class="tr-icon">${icon}</span>`+
       slackDot(node)+
-      `<span class="tr-name">${node.name}</span>`+
+      `<span class="tr-name">${sanitise(node.name)}</span>`+
       `<span class="tr-meta">${node.type==='file'?fmtSize(node.size):'dir'}</span>`;
     div.addEventListener('click',()=>{
       if(hasKids){isExp?expanded.delete(node.id):expanded.add(node.id);}
@@ -766,7 +791,7 @@ function select(node) {
 // ── Info strip ─────────────────────────────────────────────────
 function renderInfo(n) {
   const icon = n.type==='dir'?'📁':'📄';
-  $('info-title').textContent=icon+' '+n.name+(n.path?' — '+n.path:'');
+  $('info-title').textContent=icon+' '+sanitise(n.name)+(n.path?' — '+sanitise(n.path):'');
   const sector = (n.blocks&&n.blocks[0])||0;
   const byteOff = sector*BLOCK_SIZE;
   // Filesystem-aware terminology
@@ -792,9 +817,9 @@ function renderInfo(n) {
     `<div class="info-kv"><span class="k">${k}</span><span class="v">${v}</span></div>`
   ).join('');
   // exFAT cluster slack warning — can be enormous
-  if(n.slackWarning){
+  if(n.slackWarning&&typeof n.slackWarning==='string'){
     $('info-grid').innerHTML += `<div class="info-kv" style="grid-column:1/-1">
-      <span class="v" style="color:var(--red);font-size:10px">${n.slackWarning}</span></div>`;
+      <span class="v" style="color:var(--red);font-size:10px">${sanitise(n.slackWarning)}</span></div>`;
   }
 }
 
