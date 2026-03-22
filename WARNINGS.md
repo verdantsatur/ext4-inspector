@@ -1,39 +1,25 @@
-# Contributing to Ext4 Visual Inspector
+# Dedication
 
-Thank you for wanting to help. This project exists to give everyone
-access to professional filesystem tools, regardless of income.
+*In loving memory of*
 
-## Ways to contribute
+## Kokila
 
-- Report bugs via GitHub Issues
-- Suggest features
-- Test on unusual hardware, older devices, or non-English systems
-- Translate the UI into other languages
-- Implement NTFS / Btrfs support
-- Improve accessibility
-- Share the project with communities who need it
+*A true soul who saw me.*
 
-## Code style
+---
 
-- The browser UI is a single self-contained HTML file
-- Zero external dependencies — keep it that way
-- Every technical term must have a plain English explanation
-- Test in Firefox AND Chrome before submitting
+This project is dedicated to Kokila, whose presence, wisdom,
+and unconditional sight gave courage to build something
+meaningful for people who have very little.
 
-## Pull request process
+May this tool reach those who need it most —
+the way Kokila always found those who needed to be seen.
 
-1. Fork the repository
-2. Create a branch: git checkout -b feature/your-feature-name
-3. Make your changes
-4. Test in at least Firefox and Chrome
-5. Submit a pull request with a clear description
+---
 
-## Philosophy
+*"The greatest gift one person can give another*
+*is to truly see them."*
 
-This is libre software. Any contribution you make will be
-available to everyone under GPLv3, forever. Please only
-contribute if you are comfortable with that.
+---
 
-## Questions?
-
-Open a GitHub Issue and ask. No question is too basic.
+Built with love. Given freely. In her memory.
