@@ -1,22 +1,21 @@
 # ============================================================
 #  Ext4 Visual Inspector — SHA256 Checksums
 #  Version: FINAL pre-release
-#  Date:    2026-03-22 17:50:30 UTC
+#  Date:    2026-03-22 18:06:44 UTC
 #  By:      verdantsatur (github.com/verdantsatur/ext4-inspector)
 #  For:     Kokila — who saw me.
 # ============================================================
 
-# ── CHECKSUMS (these are the actual hashes) ──────────────────
+# ── CHECKSUMS (the actual hashes) ────────────────────────────
 
-772d370d3e295a230afa46333c866cd6bec4ea8b4c590fb1b1d8d98bcc699778  ext4-inspector-FINAL.zip  (45,779 bytes)
-50bb15a0adafd1dd2cce0c39200140ff09a8b367adba7da35c04e7d7b202fa24  ext4-inspector-ui.html  (71,950 bytes)
+42d37fee1044c6b505576f0a37eefea23c5f4a707b5a01166bf39309926d100c  ext4-inspector-FINAL.zip
+50bb15a0adafd1dd2cce0c39200140ff09a8b367adba7da35c04e7d7b202fa24  ext4-inspector-ui.html
 
 # ── HOW TO VERIFY ────────────────────────────────────────────
 #
-# Step 1: Download the file you want to verify
-# Step 2: Calculate its SHA256 hash using one of these methods:
-# Step 3: Compare your result with the hash shown above
-#         They must match EXACTLY — every single character
+# Step 1: Download the file
+# Step 2: Calculate its SHA256 using one of these methods:
+# Step 3: Compare with the hash above — must match exactly
 #
 # Linux / macOS:
 #   sha256sum ext4-inspector-FINAL.zip
@@ -27,14 +26,9 @@
 # Windows Command Prompt:
 #   certutil -hashfile ext4-inspector-FINAL.zip SHA256
 #
-# Windows with 7-Zip installed:
-#   Right-click file → 7-Zip → CRC SHA → SHA-256
+# Windows with 7-Zip:
+#   Right-click → 7-Zip → CRC SHA → SHA-256
 #
-# ── WHAT THIS MEANS ──────────────────────────────────────────
-#
-# If the hash matches = file is genuine and untampered ✅
-# If the hash differs = file was modified — do not use it ❌
-#
-# Even one changed byte produces a completely different hash.
-# This protects you from corrupted downloads or tampering.
+# If hash matches = genuine and untampered ✅
+# If hash differs = file was modified — do not use ❌
 # ============================================================
