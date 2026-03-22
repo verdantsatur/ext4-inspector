@@ -1,0 +1,543 @@
+#!/usr/bin/env bash
+# ================================================================
+#  fs_bridge.sh — Universal Filesystem Bridge
+#  Supports: Ext4 · FAT32 · exFAT
+#  Version 2.0 | GPLv3 | Free/Libre Software
+#
+#  Scans a mounted partition, USB drive, or folder and exports
+#  a JSON file the browser UI can load and visualise.
+#
+#  Usage:
+#    ./fs_bridge.sh --folder ~/Documents
+#    ./fs_bridge.sh --mount /mnt/usb
+#    ./fs_bridge.sh --partition /dev/sdb1
+#
+#  Filesystem is auto-detected. Override with --fs ext4|fat32|exfat
+#
+#  Output: ./data/fs_export.json
+# ================================================================
+
+set -euo pipefail
+
+# ================================================================
+#  SAFETY NOTICE — READ BEFORE RUNNING
+#  This script is READ-ONLY. It NEVER modifies your data.
+#  It only reads filesystem information and writes a JSON file.
+#
+#  FIRST TIME? Start with folder mode — no root needed:
+#    ./fs_bridge.sh --folder ~/Documents
+#
+#  BEFORE using --partition mode:
+#    1. Run: lsblk         (see all your disks)
+#    2. Run: df -h         (see what is mounted where)
+#    3. Make sure you know which /dev/ is your target
+#    4. Read WARNINGS.md in the project root
+# ================================================================
+
+# ── Colours ─────────────────────────────────────────────────────
+RED='\033[0;31m'; GREEN='\033[0;32m'; YELLOW='\033[1;33m'
+BLUE='\033[0;34m'; CYAN='\033[0;36m'; BOLD='\033[1m'; NC='\033[0m'
+
+log()  { echo -e "${BLUE}[INFO]${NC}  $*"; }
+ok()   { echo -e "${GREEN}[OK]${NC}    $*"; }
+warn() { echo -e "${YELLOW}[WARN]${NC}  $*"; }
+err()  { echo -e "${RED}[ERROR]${NC} $*" >&2; exit 1; }
+step() { echo -e "${CYAN}[....] $*${NC}"; }
+
+# ── Defaults ─────────────────────────────────────────────────────
+MODE=""
+TARGET=""
+FS_TYPE="auto"
+OUTPUT_DIR="$(dirname "$0")/../data"
+OUTPUT_FILE="$OUTPUT_DIR/fs_export.json"
+MAX_DEPTH=20
+MAX_FILES=5000
+SKIP_HEX=false
+MOUNT_POINT=""
+MOUNTED_BY_US=false
+
+# ── Usage ────────────────────────────────────────────────────────
+usage() {
+cat <<'EOF'
+Universal Filesystem Bridge — fs_bridge.sh
+==========================================
+Scans Ext4, FAT32, or exFAT filesystems and exports JSON
+for the Ext4 Visual Inspector browser UI.
+
+Usage:
+  ./fs_bridge.sh --folder <path>
+  ./fs_bridge.sh --mount <mountpoint>
+  ./fs_bridge.sh --partition <device>
+
+Options:
+  --fs <type>        Force filesystem type: ext4 | fat32 | exfat | auto
+  --output <file>    Output JSON path (default: ./data/fs_export.json)
+  --max-files <n>    Max files to scan (default: 5000)
+  --max-depth <n>    Max directory depth (default: 20)
+  --no-hex           Skip hex byte sampling (faster)
+  --help             Show this help
+
+Examples:
+  # Scan a USB stick (auto-detects FAT32 or exFAT):
+  ./fs_bridge.sh --mount /mnt/usb
+
+  # Scan a specific partition:
+  sudo ./fs_bridge.sh --partition /dev/sdb1
+
+  # Scan a folder (works on any filesystem):
+  ./fs_bridge.sh --folder ~/Documents
+
+  # Force FAT32 mode:
+  ./fs_bridge.sh --mount /mnt/usb --fs fat32
+
+Install dependencies:
+  sudo apt install dosfstools exfatprogs e2fsprogs xxd python3
+
+Safety: This script is READ-ONLY. It never modifies your data.
+EOF
+exit 0
+}
+
+# ── Argument parsing ──────────────────────────────────────────────
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --folder)    MODE="folder";    TARGET="$2"; shift 2;;
+    --partition) MODE="partition"; TARGET="$2"; shift 2;;
+    --mount)     MODE="mount";     TARGET="$2"; shift 2;;
+    --fs)        FS_TYPE="$2";     shift 2;;
+    --output)    OUTPUT_FILE="$2"; shift 2;;
+    --max-files) MAX_FILES="$2";   shift 2;;
+    --max-depth) MAX_DEPTH="$2";   shift 2;;
+    --no-hex)    SKIP_HEX=true;    shift;;
+    --help|-h)   usage;;
+    *) err "Unknown option: $1. Use --help for usage.";;
+  esac
+done
+
+[[ -z "$MODE" ]]   && err "No scan mode specified. Use --folder, --partition, or --mount."
+[[ -z "$TARGET" ]] && err "No target specified."
+
+# ── Dependency check ──────────────────────────────────────────────
+check_deps() {
+  local missing=()
+  # Always needed
+  for cmd in python3 find stat; do
+    command -v "$cmd" &>/dev/null || missing+=("$cmd")
+  done
+  # xxd optional — Python fallback exists
+  if ! command -v xxd &>/dev/null; then
+    warn "xxd not found — using Python hex fallback (install xxd for speed)"
+    SKIP_HEX=false  # Python handles it
+  fi
+  # Partition mode
+  if [[ "$MODE" == "partition" ]]; then
+    for cmd in mount umount; do
+      command -v "$cmd" &>/dev/null || missing+=("$cmd")
+    done
+  fi
+  if [[ ${#missing[@]} -gt 0 ]]; then
+    err "Missing required tools: ${missing[*]}\nInstall: sudo apt install python3 coreutils"
+  fi
+}
+check_deps
+
+mkdir -p "$OUTPUT_DIR"
+
+# ── Mount partition if needed ─────────────────────────────────────
+if [[ "$MODE" == "partition" ]]; then
+  [[ $EUID -ne 0 ]] && err "Partition scan needs root. Run: sudo $0 --partition $TARGET"
+  [[ -b "$TARGET" ]] || err "Not a block device: $TARGET"
+  MOUNT_POINT="/tmp/fs_inspector_$$"
+  mkdir -p "$MOUNT_POINT"
+  log "Mounting $TARGET (read-only)..."
+  mount -o ro "$TARGET" "$MOUNT_POINT" || err "Failed to mount $TARGET"
+  MOUNTED_BY_US=true
+  SCAN_ROOT="$MOUNT_POINT"
+elif [[ "$MODE" == "mount" ]]; then
+  SCAN_ROOT="$TARGET"
+  [[ -d "$SCAN_ROOT" ]] || err "Mount point not found: $SCAN_ROOT"
+else
+  SCAN_ROOT="$TARGET"
+  [[ -d "$SCAN_ROOT" ]] || err "Folder not found: $SCAN_ROOT"
+fi
+
+# Cleanup on exit
+cleanup() {
+  if [[ "$MOUNTED_BY_US" == true && -n "$MOUNT_POINT" ]]; then
+    log "Unmounting $MOUNT_POINT..."
+    umount "$MOUNT_POINT" 2>/dev/null || true
+    rmdir  "$MOUNT_POINT" 2>/dev/null || true
+  fi
+}
+trap cleanup EXIT
+
+# ── Filesystem auto-detection ─────────────────────────────────────
+detect_fs() {
+  local target="$1"
+  # Try blkid on partition/mount source
+  if command -v blkid &>/dev/null && [[ -b "$target" ]]; then
+    local fstype
+    fstype=$(blkid -o value -s TYPE "$target" 2>/dev/null || echo "")
+    case "$fstype" in
+      ext4)       echo "ext4";  return;;
+      vfat|fat32) echo "fat32"; return;;
+      exfat)      echo "exfat"; return;;
+    esac
+  fi
+  # Try /proc/mounts for mounted path
+  if [[ -d "$target" ]]; then
+    local realpath
+    realpath=$(realpath "$target" 2>/dev/null || echo "$target")
+    local fstype
+    fstype=$(grep " $realpath " /proc/mounts 2>/dev/null | awk '{print $3}' | head -1)
+    case "$fstype" in
+      ext4)       echo "ext4";  return;;
+      vfat|msdos) echo "fat32"; return;;
+      exfat)      echo "exfat"; return;;
+    esac
+    # Try parent mounts
+    fstype=$(df -T "$realpath" 2>/dev/null | tail -1 | awk '{print $2}')
+    case "$fstype" in
+      ext4)       echo "ext4";  return;;
+      vfat|msdos) echo "fat32"; return;;
+      exfat)      echo "exfat"; return;;
+    esac
+  fi
+  echo "ext4"  # safe default
+}
+
+if [[ "$FS_TYPE" == "auto" ]]; then
+  if [[ "$MODE" == "partition" ]]; then
+    FS_TYPE=$(detect_fs "$TARGET")
+  else
+    FS_TYPE=$(detect_fs "$SCAN_ROOT")
+  fi
+  log "Auto-detected filesystem: $FS_TYPE"
+else
+  log "Filesystem type forced: $FS_TYPE"
+fi
+
+# ── Filesystem-specific info ──────────────────────────────────────
+get_fs_info() {
+  local fs="$1"
+  local mount="$2"
+  case "$fs" in
+    fat32)
+      local info=""
+      if command -v fsck.fat &>/dev/null && [[ -b "${TARGET:-}" ]]; then
+        info=$(fsck.fat -n "$TARGET" 2>&1 | head -5 || true)
+      fi
+      # Get cluster size from mount info
+      local cluster_size
+      cluster_size=$(stat -f -c "%s" "$mount" 2>/dev/null || echo "4096")
+      cat <<JSON
+{
+  "fsType": "FAT32",
+  "fsTypeId": "fat32",
+  "clusterSize": $cluster_size,
+  "sectorSize": 512,
+  "maxFileSize": "4 GB (FAT32 limit)",
+  "maxPartition": "32 GB (FAT32 limit)",
+  "journaling": false,
+  "caseSensitive": false,
+  "note": "FAT32 — File Allocation Table 32. No inodes — uses Directory Entries. No journaling. Maximum compatibility with all devices."
+}
+JSON
+      ;;
+    exfat)
+      local cluster_size
+      cluster_size=$(stat -f -c "%s" "$mount" 2>/dev/null || echo "131072")
+      cat <<JSON
+{
+  "fsType": "exFAT",
+  "fsTypeId": "exfat",
+  "clusterSize": $cluster_size,
+  "sectorSize": 512,
+  "maxFileSize": "16 EB (theoretical)",
+  "maxPartition": "128 PB (theoretical)",
+  "journaling": false,
+  "caseSensitive": false,
+  "note": "exFAT — Extended File Allocation Table. Microsoft open standard since 2019. Default for USB/SD cards >32 GB. Natively supported by Windows, macOS, Linux, iOS, Android."
+}
+JSON
+      ;;
+    ext4|*)
+      local block_size
+      block_size=$(stat -f -c "%s" "$mount" 2>/dev/null || echo "4096")
+      cat <<JSON
+{
+  "fsType": "Ext4",
+  "fsTypeId": "ext4",
+  "blockSize": $block_size,
+  "inodeSize": 256,
+  "sectorSize": 512,
+  "maxFileSize": "16 TB",
+  "maxPartition": "1 EB",
+  "journaling": true,
+  "caseSensitive": true,
+  "note": "Ext4 — Fourth Extended Filesystem. Linux default since 2008. Inodes, journaling, extents, 64-bit addressing."
+}
+JSON
+      ;;
+  esac
+}
+
+FS_INFO=$(get_fs_info "$FS_TYPE" "$SCAN_ROOT")
+
+# ── Python tree builder (unified for all FS types) ────────────────
+log "Scanning $SCAN_ROOT ($FS_TYPE)..."
+log "Max files: $MAX_FILES | Max depth: $MAX_DEPTH"
+
+python3 << PYEOF
+import os, json, sys, stat as statmod, time
+
+root       = "$SCAN_ROOT"
+fs_type    = "$FS_TYPE"
+max_depth  = $MAX_DEPTH
+max_files  = $MAX_FILES
+skip_hex   = $([[ "$SKIP_HEX" == true ]] && echo "True" || echo "False")
+
+# ── Filesystem-specific terminology ──────────────────────────────
+FS_TERMS = {
+  "ext4":  {
+    "block_unit":   "block",
+    "block_size":   4096,
+    "meta_unit":    "inode",
+    "meta_size":    256,
+    "has_inodes":   True,
+    "has_clusters": False,
+  },
+  "fat32": {
+    "block_unit":   "cluster",
+    "block_size":   4096,   # typical, detected below
+    "meta_unit":    "directory entry",
+    "meta_size":    32,
+    "has_inodes":   False,
+    "has_clusters": True,
+  },
+  "exfat": {
+    "block_unit":   "cluster",
+    "block_size":   131072, # typical for exFAT on large drives
+    "meta_unit":    "directory entry",
+    "meta_size":    32,
+    "has_inodes":   False,
+    "has_clusters": True,
+  },
+}
+
+terms = FS_TERMS.get(fs_type, FS_TERMS["ext4"])
+
+# Detect actual cluster/block size from filesystem
+try:
+  st = os.statvfs(root)
+  terms["block_size"] = st.f_bsize
+except:
+  pass
+
+BLOCK_SIZE = terms["block_size"]
+
+# ── Extension map ──────────────────────────────────────────────
+EXT_MAP = {
+  ".pdf":"pdf",".txt":"txt",".md":"md",".docx":"docx",".doc":"doc",
+  ".jpg":"jpg",".jpeg":"jpg",".png":"png",".gif":"gif",".bmp":"bmp",
+  ".mp4":"mp4",".mp3":"mp3",".wav":"wav",".avi":"avi",".mkv":"mkv",
+  ".zip":"zip",".tar":"tar",".gz":"gz",".bz2":"bz2",".xz":"xz",
+  ".py":"py",".sh":"sh",".c":"c",".cpp":"cpp",".js":"js",
+  ".html":"html",".css":"css",".json":"json",".xml":"xml",
+  ".csv":"csv",".log":"log",".iso":"iso",".img":"img",
+  ".db":"db",".sqlite":"sqlite",".exe":"exe",".dll":"dll",
+  ".mov":"mov",".aac":"aac",".flac":"flac",".ogg":"ogg",
+}
+
+file_count = [0]
+node_id    = [0]
+
+# ── Hex sampling — Python-native (no xxd needed) ──────────────
+def get_hex_sample(path, max_bytes=256):
+  if skip_hex:
+    return []
+  try:
+    with open(path, "rb") as f:
+      return list(f.read(max_bytes))
+  except:
+    return []
+
+# ── Slack space ───────────────────────────────────────────────
+def calc_slack(size, bsz):
+  if size == 0: return 0, 0
+  rem = size % bsz
+  slack = 0 if rem == 0 else bsz - rem
+  pct = round(slack / bsz * 100, 1)
+  return slack, pct
+
+# ── Permissions ───────────────────────────────────────────────
+def fmt_perms(mode):
+  p = ""
+  for bits in [(statmod.S_IRUSR, statmod.S_IWUSR, statmod.S_IXUSR),
+               (statmod.S_IRGRP, statmod.S_IWGRP, statmod.S_IXGRP),
+               (statmod.S_IROTH, statmod.S_IWOTH, statmod.S_IXOTH)]:
+    p += "r" if mode & bits[0] else "-"
+    p += "w" if mode & bits[1] else "-"
+    p += "x" if mode & bits[2] else "-"
+  return p
+
+# FAT32/exFAT: fake inode from inode field (may be 0 on FAT)
+# Use a hash of path instead for unique ID
+def fat_inode(path, st):
+  ino = st.st_ino
+  if ino == 0:
+    ino = abs(hash(path)) % 2147483647
+  return ino
+
+# ── Recursive tree walker ─────────────────────────────────────
+def walk(path, depth=0, rel_path="/"):
+  if depth > max_depth or file_count[0] >= max_files:
+    return None
+
+  node_id[0] += 1
+  nid = node_id[0]
+
+  try:
+    st = os.lstat(path)
+  except Exception as e:
+    return None
+
+  is_dir  = statmod.S_ISDIR(st.st_mode)
+  is_link = statmod.S_ISLNK(st.st_mode)
+  name    = os.path.basename(path) or "/"
+  ext     = EXT_MAP.get(os.path.splitext(name)[1].lower(), "")
+  size    = st.st_size if not is_dir else 0
+  mtime   = time.strftime("%Y-%m-%d", time.localtime(st.st_mtime))
+  perms   = fmt_perms(st.st_mode)
+
+  # Inode / cluster number
+  inode_num = fat_inode(path, st) if fs_type in ("fat32","exfat") else st.st_ino
+
+  # Block/cluster allocation
+  blk_count = max(1, (size + BLOCK_SIZE - 1) // BLOCK_SIZE) if size > 0 else 1
+  # Educational approximation of first block/cluster number
+  first_blk = (inode_num * 7 + 1024) % 524288
+
+  slack, slack_pct = calc_slack(size, BLOCK_SIZE)
+
+  # For FAT32/exFAT: note that "slack" = file allocation unit slack
+  # This is REAL slack — FAT allocates whole clusters, so a 100-byte
+  # file on a 128KB exFAT cluster wastes 131,000 bytes! Very important.
+
+  node = {
+    "id":         nid,
+    "type":       "dir" if is_dir else ("symlink" if is_link else "file"),
+    "name":       name,
+    "path":       rel_path,
+    "inode":      inode_num,
+    "size":       size,
+    "ext":        ext,
+    "modified":   mtime,
+    "perms":      perms,
+    "uid":        st.st_uid,
+    "gid":        st.st_gid,
+    "nlinks":     st.st_nlink,
+    "blocks":     [first_blk + i for i in range(min(blk_count, 256))],
+    "blockCount": blk_count,
+    "blockUnit":  terms["block_unit"],
+    "metaUnit":   terms["meta_unit"],
+    "slack":      slack,
+    "slackPct":   slack_pct,
+    "hexSample":  [] if is_dir else get_hex_sample(path),
+    # FAT-specific
+    "hasInodes":    terms["has_inodes"],
+    "hasClusters":  terms["has_clusters"],
+    # exFAT slack warning — cluster slack can be HUGE
+    "slackWarning": (
+      "⚠ Large cluster slack: exFAT allocated a full cluster of " +
+      str(BLOCK_SIZE // 1024) + " KB for a " + str(size) + " byte file!"
+      if fs_type == "exfat" and size > 0 and size < BLOCK_SIZE // 2 and slack > 0
+      else ""
+    ),
+  }
+
+  file_count[0] += 1
+
+  if is_dir:
+    children = []
+    try:
+      entries = sorted(os.listdir(path))
+    except PermissionError:
+      entries = []
+    for entry in entries:
+      if file_count[0] >= max_files:
+        children.append({
+          "id": -1, "type": "truncated",
+          "name": "[scan limit reached — use --max-files N to increase]",
+          "size":0,"inode":0,"blocks":[],"slack":0,"slackPct":0,
+          "ext":"","modified":"","perms":"","uid":0,"gid":0,
+          "nlinks":0,"blockCount":0,"hexSample":[],
+          "blockUnit":terms["block_unit"],"metaUnit":terms["meta_unit"],
+          "hasInodes":False,"hasClusters":False,"slackWarning":"",
+        })
+        break
+      child_path = os.path.join(path, entry)
+      child_rel  = rel_path.rstrip("/") + "/" + entry
+      child = walk(child_path, depth+1, child_rel)
+      if child:
+        children.append(child)
+    node["children"] = children
+
+  return node
+
+print("Building tree...", file=sys.stderr)
+tree = walk(root, 0, "/")
+
+# ── Superblock / volume info ───────────────────────────────────
+try:
+  st = os.statvfs(root)
+  total_bytes  = st.f_blocks * st.f_bsize
+  free_bytes   = st.f_bfree  * st.f_bsize
+  used_bytes   = total_bytes - free_bytes
+  total_inodes = st.f_files
+  free_inodes  = st.f_ffree
+except:
+  total_bytes=free_bytes=used_bytes=total_inodes=free_inodes=0
+
+volume_info = {
+  "fsType":       "$FS_TYPE",
+  "scanMode":     "$MODE",
+  "scanTarget":   "$TARGET",
+  "scanRoot":     "$SCAN_ROOT",
+  "scanTime":     time.strftime("%Y-%m-%d %H:%M:%S"),
+  "blockSize":    BLOCK_SIZE,
+  "blockUnit":    terms["block_unit"],
+  "metaUnit":     terms["meta_unit"],
+  "hasInodes":    terms["has_inodes"],
+  "hasClusters":  terms["has_clusters"],
+  "totalBytes":   total_bytes,
+  "freeBytes":    free_bytes,
+  "usedBytes":    used_bytes,
+  "totalInodes":  total_inodes,
+  "freeInodes":   free_inodes,
+  "fileCount":    file_count[0],
+}
+
+output = {
+  "version":    "2.0",
+  "filesystemInfo": volume_info,
+  "superblock": json.loads('$FS_INFO'.replace("\n"," ")),
+  "tree":       tree,
+}
+
+with open("$OUTPUT_FILE", "w") as f:
+  json.dump(output, f, indent=2)
+
+print(f"Done. {file_count[0]} items → $OUTPUT_FILE", file=sys.stderr)
+PYEOF
+
+ok "Scan complete: $OUTPUT_FILE"
+echo ""
+echo -e "${BOLD}Filesystem:${NC}  $FS_TYPE"
+echo -e "${BOLD}Items found:${NC} $(python3 -c "import json; d=json.load(open('$OUTPUT_FILE')); print(d['filesystemInfo']['fileCount'])")"
+echo -e "${BOLD}Output:${NC}      $OUTPUT_FILE"
+echo ""
+echo -e "${CYAN}Next steps:${NC}"
+echo "  python3 -m http.server 8080"
+echo "  Open: http://localhost:8080/ui/index.html"
+echo "  Click 'Load scan JSON' → select $OUTPUT_FILE"

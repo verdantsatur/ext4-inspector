@@ -1,674 +1,1498 @@
-                    GNU GENERAL PUBLIC LICENSE
-                       Version 3, 29 June 2007
-
- Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>
- Everyone is permitted to copy and distribute verbatim copies
- of this license document, but changing it is not allowed.
-
-                            Preamble
-
-  The GNU General Public License is a free, copyleft license for
-software and other kinds of works.
-
-  The licenses for most software and other practical works are designed
-to take away your freedom to share and change the works.  By contrast,
-the GNU General Public License is intended to guarantee your freedom to
-share and change all versions of a program--to make sure it remains free
-software for all its users.  We, the Free Software Foundation, use the
-GNU General Public License for most of our software; it applies also to
-any other work released this way by its authors.  You can apply it to
-your programs, too.
-
-  When we speak of free software, we are referring to freedom, not
-price.  Our General Public Licenses are designed to make sure that you
-have the freedom to distribute copies of free software (and charge for
-them if you wish), that you receive source code or can get it if you
-want it, that you can change the software or use pieces of it in new
-free programs, and that you know you can do these things.
-
-  To protect your rights, we need to prevent others from denying you
-these rights or asking you to surrender the rights.  Therefore, you have
-certain responsibilities if you distribute copies of the software, or if
-you modify it: responsibilities to respect the freedom of others.
-
-  For example, if you distribute copies of such a program, whether
-gratis or for a fee, you must pass on to the recipients the same
-freedoms that you received.  You must make sure that they, too, receive
-or can get the source code.  And you must show them these terms so they
-know their rights.
-
-  Developers that use the GNU GPL protect your rights with two steps:
-(1) assert copyright on the software, and (2) offer you this License
-giving you legal permission to copy, distribute and/or modify it.
-
-  For the developers' and authors' protection, the GPL clearly explains
-that there is no warranty for this free software.  For both users' and
-authors' sake, the GPL requires that modified versions be marked as
-changed, so that their problems will not be attributed erroneously to
-authors of previous versions.
-
-  Some devices are designed to deny users access to install or run
-modified versions of the software inside them, although the manufacturer
-can do so.  This is fundamentally incompatible with the aim of
-protecting users' freedom to change the software.  The systematic
-pattern of such abuse occurs in the area of products for individuals to
-use, which is precisely where it is most unacceptable.  Therefore, we
-have designed this version of the GPL to prohibit the practice for those
-products.  If such problems arise substantially in other domains, we
-stand ready to extend this provision to those domains in future versions
-of the GPL, as needed to protect the freedom of users.
-
-  Finally, every program is threatened constantly by software patents.
-States should not allow patents to restrict development and use of
-software on general-purpose computers, but in those that do, we wish to
-avoid the special danger that patents applied to a free program could
-make it effectively proprietary.  To prevent this, the GPL assures that
-patents cannot be used to render the program non-free.
-
-  The precise terms and conditions for copying, distribution and
-modification follow.
-
-                       TERMS AND CONDITIONS
-
-  0. Definitions.
-
-  "This License" refers to version 3 of the GNU General Public License.
-
-  "Copyright" also means copyright-like laws that apply to other kinds of
-works, such as semiconductor masks.
-
-  "The Program" refers to any copyrightable work licensed under this
-License.  Each licensee is addressed as "you".  "Licensees" and
-"recipients" may be individuals or organizations.
-
-  To "modify" a work means to copy from or adapt all or part of the work
-in a fashion requiring copyright permission, other than the making of an
-exact copy.  The resulting work is called a "modified version" of the
-earlier work or a work "based on" the earlier work.
-
-  A "covered work" means either the unmodified Program or a work based
-on the Program.
-
-  To "propagate" a work means to do anything with it that, without
-permission, would make you directly or secondarily liable for
-infringement under applicable copyright law, except executing it on a
-computer or modifying a private copy.  Propagation includes copying,
-distribution (with or without modification), making available to the
-public, and in some countries other activities as well.
-
-  To "convey" a work means any kind of propagation that enables other
-parties to make or receive copies.  Mere interaction with a user through
-a computer network, with no transfer of a copy, is not conveying.
-
-  An interactive user interface displays "Appropriate Legal Notices"
-to the extent that it includes a convenient and prominently visible
-feature that (1) displays an appropriate copyright notice, and (2)
-tells the user that there is no warranty for the work (except to the
-extent that warranties are provided), that licensees may convey the
-work under this License, and how to view a copy of this License.  If
-the interface presents a list of user commands or options, such as a
-menu, a prominent item in the list meets this criterion.
-
-  1. Source Code.
-
-  The "source code" for a work means the preferred form of the work
-for making modifications to it.  "Object code" means any non-source
-form of a work.
-
-  A "Standard Interface" means an interface that either is an official
-standard defined by a recognized standards body, or, in the case of
-interfaces specified for a particular programming language, one that
-is widely used among developers working in that language.
-
-  The "System Libraries" of an executable work include anything, other
-than the work as a whole, that (a) is included in the normal form of
-packaging a Major Component, but which is not part of that Major
-Component, and (b) serves only to enable use of the work with that
-Major Component, or to implement a Standard Interface for which an
-implementation is available to the public in source code form.  A
-"Major Component", in this context, means a major essential component
-(kernel, window system, and so on) of the specific operating system
-(if any) on which the executable work runs, or a compiler used to
-produce the work, or an object code interpreter used to run it.
-
-  The "Corresponding Source" for a work in object code form means all
-the source code needed to generate, install, and (for an executable
-work) run the object code and to modify the work, including scripts to
-control those activities.  However, it does not include the work's
-System Libraries, or general-purpose tools or generally available free
-programs which are used unmodified in performing those activities but
-which are not part of the work.  For example, Corresponding Source
-includes interface definition files associated with source files for
-the work, and the source code for shared libraries and dynamically
-linked subprograms that the work is specifically designed to require,
-such as by intimate data communication or control flow between those
-subprograms and other parts of the work.
-
-  The Corresponding Source need not include anything that users
-can regenerate automatically from other parts of the Corresponding
-Source.
-
-  The Corresponding Source for a work in source code form is that
-same work.
-
-  2. Basic Permissions.
-
-  All rights granted under this License are granted for the term of
-copyright on the Program, and are irrevocable provided the stated
-conditions are met.  This License explicitly affirms your unlimited
-permission to run the unmodified Program.  The output from running a
-covered work is covered by this License only if the output, given its
-content, constitutes a covered work.  This License acknowledges your
-rights of fair use or other equivalent, as provided by copyright law.
-
-  You may make, run and propagate covered works that you do not
-convey, without conditions so long as your license otherwise remains
-in force.  You may convey covered works to others for the sole purpose
-of having them make modifications exclusively for you, or provide you
-with facilities for running those works, provided that you comply with
-the terms of this License in conveying all material for which you do
-not control copyright.  Those thus making or running the covered works
-for you must do so exclusively on your behalf, under your direction
-and control, on terms that prohibit them from making any copies of
-your copyrighted material outside their relationship with you.
-
-  Conveying under any other circumstances is permitted solely under
-the conditions stated below.  Sublicensing is not allowed; section 10
-makes it unnecessary.
-
-  3. Protecting Users' Legal Rights From Anti-Circumvention Law.
-
-  No covered work shall be deemed part of an effective technological
-measure under any applicable law fulfilling obligations under article
-11 of the WIPO copyright treaty adopted on 20 December 1996, or
-similar laws prohibiting or restricting circumvention of such
-measures.
-
-  When you convey a covered work, you waive any legal power to forbid
-circumvention of technological measures to the extent such circumvention
-is effected by exercising rights under this License with respect to
-the covered work, and you disclaim any intention to limit operation or
-modification of the work as a means of enforcing, against the work's
-users, your or third parties' legal rights to forbid circumvention of
-technological measures.
-
-  4. Conveying Verbatim Copies.
-
-  You may convey verbatim copies of the Program's source code as you
-receive it, in any medium, provided that you conspicuously and
-appropriately publish on each copy an appropriate copyright notice;
-keep intact all notices stating that this License and any
-non-permissive terms added in accord with section 7 apply to the code;
-keep intact all notices of the absence of any warranty; and give all
-recipients a copy of this License along with the Program.
-
-  You may charge any price or no price for each copy that you convey,
-and you may offer support or warranty protection for a fee.
-
-  5. Conveying Modified Source Versions.
-
-  You may convey a work based on the Program, or the modifications to
-produce it from the Program, in the form of source code under the
-terms of section 4, provided that you also meet all of these conditions:
-
-    a) The work must carry prominent notices stating that you modified
-    it, and giving a relevant date.
-
-    b) The work must carry prominent notices stating that it is
-    released under this License and any conditions added under section
-    7.  This requirement modifies the requirement in section 4 to
-    "keep intact all notices".
-
-    c) You must license the entire work, as a whole, under this
-    License to anyone who comes into possession of a copy.  This
-    License will therefore apply, along with any applicable section 7
-    additional terms, to the whole of the work, and all its parts,
-    regardless of how they are packaged.  This License gives no
-    permission to license the work in any other way, but it does not
-    invalidate such permission if you have separately received it.
-
-    d) If the work has interactive user interfaces, each must display
-    Appropriate Legal Notices; however, if the Program has interactive
-    interfaces that do not display Appropriate Legal Notices, your
-    work need not make them do so.
-
-  A compilation of a covered work with other separate and independent
-works, which are not by their nature extensions of the covered work,
-and which are not combined with it such as to form a larger program,
-in or on a volume of a storage or distribution medium, is called an
-"aggregate" if the compilation and its resulting copyright are not
-used to limit the access or legal rights of the compilation's users
-beyond what the individual works permit.  Inclusion of a covered work
-in an aggregate does not cause this License to apply to the other
-parts of the aggregate.
-
-  6. Conveying Non-Source Forms.
-
-  You may convey a covered work in object code form under the terms
-of sections 4 and 5, provided that you also convey the
-machine-readable Corresponding Source under the terms of this License,
-in one of these ways:
-
-    a) Convey the object code in, or embodied in, a physical product
-    (including a physical distribution medium), accompanied by the
-    Corresponding Source fixed on a durable physical medium
-    customarily used for software interchange.
-
-    b) Convey the object code in, or embodied in, a physical product
-    (including a physical distribution medium), accompanied by a
-    written offer, valid for at least three years and valid for as
-    long as you offer spare parts or customer support for that product
-    model, to give anyone who possesses the object code either (1) a
-    copy of the Corresponding Source for all the software in the
-    product that is covered by this License, on a durable physical
-    medium customarily used for software interchange, for a price no
-    more than your reasonable cost of physically performing this
-    conveying of source, or (2) access to copy the
-    Corresponding Source from a network server at no charge.
-
-    c) Convey individual copies of the object code with a copy of the
-    written offer to provide the Corresponding Source.  This
-    alternative is allowed only occasionally and noncommercially, and
-    only if you received the object code with such an offer, in accord
-    with subsection 6b.
-
-    d) Convey the object code by offering access from a designated
-    place (gratis or for a charge), and offer equivalent access to the
-    Corresponding Source in the same way through the same place at no
-    further charge.  You need not require recipients to copy the
-    Corresponding Source along with the object code.  If the place to
-    copy the object code is a network server, the Corresponding Source
-    may be on a different server (operated by you or a third party)
-    that supports equivalent copying facilities, provided you maintain
-    clear directions next to the object code saying where to find the
-    Corresponding Source.  Regardless of what server hosts the
-    Corresponding Source, you remain obligated to ensure that it is
-    available for as long as needed to satisfy these requirements.
-
-    e) Convey the object code using peer-to-peer transmission, provided
-    you inform other peers where the object code and Corresponding
-    Source of the work are being offered to the general public at no
-    charge under subsection 6d.
-
-  A separable portion of the object code, whose source code is excluded
-from the Corresponding Source as a System Library, need not be
-included in conveying the object code work.
-
-  A "User Product" is either (1) a "consumer product", which means any
-tangible personal property which is normally used for personal, family,
-or household purposes, or (2) anything designed or sold for incorporation
-into a dwelling.  In determining whether a product is a consumer product,
-doubtful cases shall be resolved in favor of coverage.  For a particular
-product received by a particular user, "normally used" refers to a
-typical or common use of that class of product, regardless of the status
-of the particular user or of the way in which the particular user
-actually uses, or expects or is expected to use, the product.  A product
-is a consumer product regardless of whether the product has substantial
-commercial, industrial or non-consumer uses, unless such uses represent
-the only significant mode of use of the product.
-
-  "Installation Information" for a User Product means any methods,
-procedures, authorization keys, or other information required to install
-and execute modified versions of a covered work in that User Product from
-a modified version of its Corresponding Source.  The information must
-suffice to ensure that the continued functioning of the modified object
-code is in no case prevented or interfered with solely because
-modification has been made.
-
-  If you convey an object code work under this section in, or with, or
-specifically for use in, a User Product, and the conveying occurs as
-part of a transaction in which the right of possession and use of the
-User Product is transferred to the recipient in perpetuity or for a
-fixed term (regardless of how the transaction is characterized), the
-Corresponding Source conveyed under this section must be accompanied
-by the Installation Information.  But this requirement does not apply
-if neither you nor any third party retains the ability to install
-modified object code on the User Product (for example, the work has
-been installed in ROM).
-
-  The requirement to provide Installation Information does not include a
-requirement to continue to provide support service, warranty, or updates
-for a work that has been modified or installed by the recipient, or for
-the User Product in which it has been modified or installed.  Access to a
-network may be denied when the modification itself materially and
-adversely affects the operation of the network or violates the rules and
-protocols for communication across the network.
-
-  Corresponding Source conveyed, and Installation Information provided,
-in accord with this section must be in a format that is publicly
-documented (and with an implementation available to the public in
-source code form), and must require no special password or key for
-unpacking, reading or copying.
-
-  7. Additional Terms.
-
-  "Additional permissions" are terms that supplement the terms of this
-License by making exceptions from one or more of its conditions.
-Additional permissions that are applicable to the entire Program shall
-be treated as though they were included in this License, to the extent
-that they are valid under applicable law.  If additional permissions
-apply only to part of the Program, that part may be used separately
-under those permissions, but the entire Program remains governed by
-this License without regard to the additional permissions.
-
-  When you convey a copy of a covered work, you may at your option
-remove any additional permissions from that copy, or from any part of
-it.  (Additional permissions may be written to require their own
-removal in certain cases when you modify the work.)  You may place
-additional permissions on material, added by you to a covered work,
-for which you have or can give appropriate copyright permission.
-
-  Notwithstanding any other provision of this License, for material you
-add to a covered work, you may (if authorized by the copyright holders of
-that material) supplement the terms of this License with terms:
-
-    a) Disclaiming warranty or limiting liability differently from the
-    terms of sections 15 and 16 of this License; or
-
-    b) Requiring preservation of specified reasonable legal notices or
-    author attributions in that material or in the Appropriate Legal
-    Notices displayed by works containing it; or
-
-    c) Prohibiting misrepresentation of the origin of that material, or
-    requiring that modified versions of such material be marked in
-    reasonable ways as different from the original version; or
-
-    d) Limiting the use for publicity purposes of names of licensors or
-    authors of the material; or
-
-    e) Declining to grant rights under trademark law for use of some
-    trade names, trademarks, or service marks; or
-
-    f) Requiring indemnification of licensors and authors of that
-    material by anyone who conveys the material (or modified versions of
-    it) with contractual assumptions of liability to the recipient, for
-    any liability that these contractual assumptions directly impose on
-    those licensors and authors.
-
-  All other non-permissive additional terms are considered "further
-restrictions" within the meaning of section 10.  If the Program as you
-received it, or any part of it, contains a notice stating that it is
-governed by this License along with a term that is a further
-restriction, you may remove that term.  If a license document contains
-a further restriction but permits relicensing or conveying under this
-License, you may add to a covered work material governed by the terms
-of that license document, provided that the further restriction does
-not survive such relicensing or conveying.
-
-  If you add terms to a covered work in accord with this section, you
-must place, in the relevant source files, a statement of the
-additional terms that apply to those files, or a notice indicating
-where to find the applicable terms.
-
-  Additional terms, permissive or non-permissive, may be stated in the
-form of a separately written license, or stated as exceptions;
-the above requirements apply either way.
-
-  8. Termination.
-
-  You may not propagate or modify a covered work except as expressly
-provided under this License.  Any attempt otherwise to propagate or
-modify it is void, and will automatically terminate your rights under
-this License (including any patent licenses granted under the third
-paragraph of section 11).
-
-  However, if you cease all violation of this License, then your
-license from a particular copyright holder is reinstated (a)
-provisionally, unless and until the copyright holder explicitly and
-finally terminates your license, and (b) permanently, if the copyright
-holder fails to notify you of the violation by some reasonable means
-prior to 60 days after the cessation.
-
-  Moreover, your license from a particular copyright holder is
-reinstated permanently if the copyright holder notifies you of the
-violation by some reasonable means, this is the first time you have
-received notice of violation of this License (for any work) from that
-copyright holder, and you cure the violation prior to 30 days after
-your receipt of the notice.
-
-  Termination of your rights under this section does not terminate the
-licenses of parties who have received copies or rights from you under
-this License.  If your rights have been terminated and not permanently
-reinstated, you do not qualify to receive new licenses for the same
-material under section 10.
-
-  9. Acceptance Not Required for Having Copies.
-
-  You are not required to accept this License in order to receive or
-run a copy of the Program.  Ancillary propagation of a covered work
-occurring solely as a consequence of using peer-to-peer transmission
-to receive a copy likewise does not require acceptance.  However,
-nothing other than this License grants you permission to propagate or
-modify any covered work.  These actions infringe copyright if you do
-not accept this License.  Therefore, by modifying or propagating a
-covered work, you indicate your acceptance of this License to do so.
-
-  10. Automatic Licensing of Downstream Recipients.
-
-  Each time you convey a covered work, the recipient automatically
-receives a license from the original licensors, to run, modify and
-propagate that work, subject to this License.  You are not responsible
-for enforcing compliance by third parties with this License.
-
-  An "entity transaction" is a transaction transferring control of an
-organization, or substantially all assets of one, or subdividing an
-organization, or merging organizations.  If propagation of a covered
-work results from an entity transaction, each party to that
-transaction who receives a copy of the work also receives whatever
-licenses to the work the party's predecessor in interest had or could
-give under the previous paragraph, plus a right to possession of the
-Corresponding Source of the work from the predecessor in interest, if
-the predecessor has it or can get it with reasonable efforts.
-
-  You may not impose any further restrictions on the exercise of the
-rights granted or affirmed under this License.  For example, you may
-not impose a license fee, royalty, or other charge for exercise of
-rights granted under this License, and you may not initiate litigation
-(including a cross-claim or counterclaim in a lawsuit) alleging that
-any patent claim is infringed by making, using, selling, offering for
-sale, or importing the Program or any portion of it.
-
-  11. Patents.
-
-  A "contributor" is a copyright holder who authorizes use under this
-License of the Program or a work on which the Program is based.  The
-work thus licensed is called the contributor's "contributor version".
-
-  A contributor's "essential patent claims" are all patent claims
-owned or controlled by the contributor, whether already acquired or
-hereafter acquired, that would be infringed by some manner, permitted
-by this License, of making, using, or selling its contributor version,
-but do not include claims that would be infringed only as a
-consequence of further modification of the contributor version.  For
-purposes of this definition, "control" includes the right to grant
-patent sublicenses in a manner consistent with the requirements of
-this License.
-
-  Each contributor grants you a non-exclusive, worldwide, royalty-free
-patent license under the contributor's essential patent claims, to
-make, use, sell, offer for sale, import and otherwise run, modify and
-propagate the contents of its contributor version.
-
-  In the following three paragraphs, a "patent license" is any express
-agreement or commitment, however denominated, not to enforce a patent
-(such as an express permission to practice a patent or covenant not to
-sue for patent infringement).  To "grant" such a patent license to a
-party means to make such an agreement or commitment not to enforce a
-patent against the party.
-
-  If you convey a covered work, knowingly relying on a patent license,
-and the Corresponding Source of the work is not available for anyone
-to copy, free of charge and under the terms of this License, through a
-publicly available network server or other readily accessible means,
-then you must either (1) cause the Corresponding Source to be so
-available, or (2) arrange to deprive yourself of the benefit of the
-patent license for this particular work, or (3) arrange, in a manner
-consistent with the requirements of this License, to extend the patent
-license to downstream recipients.  "Knowingly relying" means you have
-actual knowledge that, but for the patent license, your conveying the
-covered work in a country, or your recipient's use of the covered work
-in a country, would infringe one or more identifiable patents in that
-country that you have reason to believe are valid.
-
-  If, pursuant to or in connection with a single transaction or
-arrangement, you convey, or propagate by procuring conveyance of, a
-covered work, and grant a patent license to some of the parties
-receiving the covered work authorizing them to use, propagate, modify
-or convey a specific copy of the covered work, then the patent license
-you grant is automatically extended to all recipients of the covered
-work and works based on it.
-
-  A patent license is "discriminatory" if it does not include within
-the scope of its coverage, prohibits the exercise of, or is
-conditioned on the non-exercise of one or more of the rights that are
-specifically granted under this License.  You may not convey a covered
-work if you are a party to an arrangement with a third party that is
-in the business of distributing software, under which you make payment
-to the third party based on the extent of your activity of conveying
-the work, and under which the third party grants, to any of the
-parties who would receive the covered work from you, a discriminatory
-patent license (a) in connection with copies of the covered work
-conveyed by you (or copies made from those copies), or (b) primarily
-for and in connection with specific products or compilations that
-contain the covered work, unless you entered into that arrangement,
-or that patent license was granted, prior to 28 March 2007.
-
-  Nothing in this License shall be construed as excluding or limiting
-any implied license or other defenses to infringement that may
-otherwise be available to you under applicable patent law.
-
-  12. No Surrender of Others' Freedom.
-
-  If conditions are imposed on you (whether by court order, agreement or
-otherwise) that contradict the conditions of this License, they do not
-excuse you from the conditions of this License.  If you cannot convey a
-covered work so as to satisfy simultaneously your obligations under this
-License and any other pertinent obligations, then as a consequence you may
-not convey it at all.  For example, if you agree to terms that obligate you
-to collect a royalty for further conveying from those to whom you convey
-the Program, the only way you could satisfy both those terms and this
-License would be to refrain entirely from conveying the Program.
-
-  13. Use with the GNU Affero General Public License.
-
-  Notwithstanding any other provision of this License, you have
-permission to link or combine any covered work with a work licensed
-under version 3 of the GNU Affero General Public License into a single
-combined work, and to convey the resulting work.  The terms of this
-License will continue to apply to the part which is the covered work,
-but the special requirements of the GNU Affero General Public License,
-section 13, concerning interaction through a network will apply to the
-combination as such.
-
-  14. Revised Versions of this License.
-
-  The Free Software Foundation may publish revised and/or new versions of
-the GNU General Public License from time to time.  Such new versions will
-be similar in spirit to the present version, but may differ in detail to
-address new problems or concerns.
-
-  Each version is given a distinguishing version number.  If the
-Program specifies that a certain numbered version of the GNU General
-Public License "or any later version" applies to it, you have the
-option of following the terms and conditions either of that numbered
-version or of any later version published by the Free Software
-Foundation.  If the Program does not specify a version number of the
-GNU General Public License, you may choose any version ever published
-by the Free Software Foundation.
-
-  If the Program specifies that a proxy can decide which future
-versions of the GNU General Public License can be used, that proxy's
-public statement of acceptance of a version permanently authorizes you
-to choose that version for the Program.
-
-  Later license versions may give you additional or different
-permissions.  However, no additional obligations are imposed on any
-author or copyright holder as a result of your choosing to follow a
-later version.
-
-  15. Disclaimer of Warranty.
-
-  THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY
-APPLICABLE LAW.  EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT
-HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM "AS IS" WITHOUT WARRANTY
-OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO,
-THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
-PURPOSE.  THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM
-IS WITH YOU.  SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF
-ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
-
-  16. Limitation of Liability.
-
-  IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING
-WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MODIFIES AND/OR CONVEYS
-THE PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES, INCLUDING ANY
-GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE
-USE OR INABILITY TO USE THE PROGRAM (INCLUDING BUT NOT LIMITED TO LOSS OF
-DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD
-PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER PROGRAMS),
-EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF
-SUCH DAMAGES.
-
-  17. Interpretation of Sections 15 and 16.
-
-  If the disclaimer of warranty and limitation of liability provided
-above cannot be given local legal effect according to their terms,
-reviewing courts shall apply local law that most closely approximates
-an absolute waiver of all civil liability in connection with the
-Program, unless a warranty or assumption of liability accompanies a
-copy of the Program in return for a fee.
-
-                     END OF TERMS AND CONDITIONS
-
-            How to Apply These Terms to Your New Programs
-
-  If you develop a new program, and you want it to be of the greatest
-possible use to the public, the best way to achieve this is to make it
-free software which everyone can redistribute and change under these terms.
-
-  To do so, attach the following notices to the program.  It is safest
-to attach them to the start of each source file to most effectively
-state the exclusion of warranty; and each file should have at least
-the "copyright" line and a pointer to where the full notice is found.
-
-    <one line to give the program's name and a brief idea of what it does.>
-    Copyright (C) <year>  <name of author>
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
-Also add information on how to contact you by electronic and paper mail.
-
-  If the program does terminal interaction, make it output a short
-notice like this when it starts in an interactive mode:
-
-    <program>  Copyright (C) <year>  <name of author>
-    This program comes with ABSOLUTELY NO WARRANTY; for details type `show w'.
-    This is free software, and you are welcome to redistribute it
-    under certain conditions; type `show c' for details.
-
-The hypothetical commands `show w' and `show c' should show the appropriate
-parts of the General Public License.  Of course, your program's commands
-might be different; for a GUI interface, you would use an "about box".
-
-  You should also get your employer (if you work as a programmer) or school,
-if any, to sign a "copyright disclaimer" for the program, if necessary.
-For more information on this, and how to apply and follow the GNU GPL, see
-<https://www.gnu.org/licenses/>.
-
-  The GNU General Public License does not permit incorporating your program
-into proprietary programs.  If your program is a subroutine library, you
-may consider it more useful to permit linking proprietary applications with
-the library.  If this is what you want to do, use the GNU Lesser General
-Public License instead of this License.  But first, please read
-<https://www.gnu.org/licenses/why-not-lgpl.html>.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ext4 Visual Inspector — Free/Libre Tool</title>
+<style>
+/* ── Reset & base ─────────────────────────────────────── */
+*{box-sizing:border-box;margin:0;padding:0}
+/* font stacks — shared across all themes */
+:root{
+  --font-mono:'Cascadia Code','Fira Mono','Consolas',monospace;
+  --font-sans:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+}
+
+/* ── SUNDAY: Linen Morning ───────────────────────────────
+   Crisp white tablecloths, fresh garden roses, earl grey  */
+[data-theme="sunday"]{
+  --bg:#faf7f2;--bg2:#f2ece2;--bg3:#e8e0d2;--bg4:#ddd4c4;
+  --border:#c8bfaf;--border2:#a89880;
+  --text:#2a1f12;--text2:#6b5840;--text3:#a08e78;
+  --blue:#5c7a4e;--blue2:#3d5c34;--green:#4a7a38;
+  --amber:#b87030;--red:#b83c2c;--cyan:#3a7878;
+  --purple:#7c5c9a;--th-accent:#5c7a4e;
+  --th-name:"Sunday — Linen Morning";
+}
+
+/* ── MONDAY: Garden Greenhouse ──────────────────────────
+   Misted glass panes, herbs in terracotta, morning dew   */
+[data-theme="monday"]{
+  --bg:#f0f5ee;--bg2:#e4eedf;--bg3:#d4e4cc;--bg4:#c4d8ba;
+  --border:#a8c49a;--border2:#80a872;
+  --text:#182814;--text2:#4a6840;--text3:#7a9870;
+  --blue:#2e6e4e;--blue2:#1e5038;--green:#3a8030;
+  --amber:#8a7020;--red:#a84030;--cyan:#2a7060;
+  --purple:#5a6898;--th-accent:#2e6e4e;
+  --th-name:"Monday — Garden Greenhouse";
+}
+
+/* ── TUESDAY: Copper Kitchen ─────────────────────────────
+   Hammered copper pots, warm brick, beeswax candles       */
+[data-theme="tuesday"]{
+  --bg:#1a1008;--bg2:#241808;--bg3:#2e2010;--bg4:#3a2a18;
+  --border:#5a3e20;--border2:#7a5830;
+  --text:#f0d8b0;--text2:#c09860;--text3:#806438;
+  --blue:#c87830;--blue2:#9a5a20;--green:#80a040;
+  --amber:#e0a030;--red:#c04828;--cyan:#80b098;
+  --purple:#a878a8;--th-accent:#c87830;
+  --th-name:"Tuesday — Copper Kitchen";
+}
+
+/* ── WEDNESDAY: Blue Willow China ───────────────────────
+   Classic blue & white porcelain, starched napkins         */
+[data-theme="wednesday"]{
+  --bg:#eef3fa;--bg2:#dce8f5;--bg3:#c8d8ef;--bg4:#b4c8e8;
+  --border:#8aacd8;--border2:#5a88c0;
+  --text:#0a1e3a;--text2:#2a4e7a;--text3:#5a7aaa;
+  --blue:#1a5298;--blue2:#0e3870;--green:#2a7850;
+  --amber:#8a6820;--red:#983828;--cyan:#1a7898;
+  --purple:#5a3a98;--th-accent:#1a5298;
+  --th-name:"Wednesday — Blue Willow China";
+}
+
+/* ── THURSDAY: Autumn Harvest ───────────────────────────
+   Dried hydrangeas, pumpkins, walnut cutting boards        */
+[data-theme="thursday"]{
+  --bg:#1c1008;--bg2:#281808;--bg3:#342010;--bg4:#402c18;
+  --border:#603820;--border2:#885030;
+  --text:#f8e8c8;--text2:#d0a060;--text3:#907040;
+  --blue:#e07830;--blue2:#b05820;--green:#78a040;
+  --amber:#f0b030;--red:#c84020;--cyan:#608878;
+  --purple:#b870a0;--th-accent:#e07830;
+  --th-name:"Thursday — Autumn Harvest";
+}
+
+/* ── FRIDAY: Parisian Bistro ────────────────────────────
+   Red gingham, dark espresso, gold bistro lettering        */
+[data-theme="friday"]{
+  --bg:#fdf8f0;--bg2:#f5ede0;--bg3:#ecdfc8;--bg4:#e0cfb0;
+  --border:#c8a880;--border2:#a88050;
+  --text:#1a0a04;--text2:#5a2e10;--text3:#9a6840;
+  --blue:#8a1c1c;--blue2:#6a0e0e;--green:#2e6e2e;
+  --amber:#c88020;--red:#b01010;--cyan:#1e6878;
+  --purple:#6a3878;--th-accent:#8a1c1c;
+  --th-name:"Friday — Parisian Bistro";
+}
+
+/* ── SATURDAY: Midnight Hacker (original) ───────────────
+   Blue-black terminals, neon glyphs, the 2am focus zone   */
+[data-theme="saturday"]{
+  --bg:#0f1117;--bg2:#181c27;--bg3:#1e2235;--bg4:#252a3d;
+  --border:#2e3450;--border2:#3d4468;
+  --text:#c8cde8;--text2:#8891b8;--text3:#555e80;
+  --blue:#4d8ef0;--blue2:#2a5cbf;--green:#4db87a;
+  --amber:#e8a53a;--red:#e05555;--cyan:#38c4c4;
+  --purple:#9b72e8;--th-accent:#4d8ef0;
+  --th-name:"Saturday — Midnight Hacker";
+}
+
+/* default = Saturday */
+:root{
+  --bg:#0f1117;--bg2:#181c27;--bg3:#1e2235;--bg4:#252a3d;
+  --border:#2e3450;--border2:#3d4468;
+  --text:#c8cde8;--text2:#8891b8;--text3:#555e80;
+  --blue:#4d8ef0;--blue2:#2a5cbf;--green:#4db87a;
+  --amber:#e8a53a;--red:#e05555;--cyan:#38c4c4;
+  --purple:#9b72e8;--th-accent:#4d8ef0;
+}
+body{background:var(--bg);color:var(--text);font-family:var(--font-sans);
+     font-size:13px;height:100vh;display:flex;flex-direction:column;overflow:hidden}
+
+/* ── Theme picker ─────────────────────────────────────── */
+#theme-bar{background:var(--bg3);border-bottom:1px solid var(--border);
+           padding:5px 14px;display:flex;align-items:center;gap:6px;flex-shrink:0;
+           overflow-x:auto;-webkit-overflow-scrolling:touch}
+#theme-bar span{font-size:10px;color:var(--text3);white-space:nowrap;margin-right:4px;flex-shrink:0}
+.th-pill{display:flex;flex-direction:column;align-items:center;gap:3px;
+         cursor:pointer;padding:4px 8px;border-radius:8px;border:1.5px solid transparent;
+         transition:border-color .15s,background .15s;flex-shrink:0;min-width:72px}
+.th-pill:hover{background:var(--bg4)}
+.th-pill.active{border-color:var(--th-accent,var(--blue))}
+.th-pill-swatches{display:flex;gap:2px;height:12px}
+.th-swatch{width:12px;height:12px;border-radius:3px}
+.th-day{font-size:9px;font-weight:600;color:var(--text2);letter-spacing:.4px;text-transform:uppercase}
+.th-label{font-size:9px;color:var(--text3);white-space:nowrap}
+
+/* ── Toolbar ──────────────────────────────────────────── */
+#toolbar{background:var(--bg2);border-bottom:1px solid var(--border);
+         padding:8px 14px;display:flex;align-items:center;gap:10px;flex-shrink:0}
+#toolbar h1{font-size:13px;font-weight:600;color:#fff;letter-spacing:.3px}
+#toolbar .sub{font-size:11px;color:var(--text2);margin-left:4px}
+#toolbar .spacer{flex:1}
+.tbtn{font-size:11px;padding:4px 12px;border:1px solid var(--border2);
+      border-radius:5px;background:transparent;color:var(--text);cursor:pointer;
+      transition:background .12s,border-color .12s}
+.tbtn:hover{background:var(--bg3);border-color:var(--blue)}
+.tbtn.primary{background:var(--blue2);border-color:var(--blue);color:#fff}
+.tbtn.primary:hover{background:var(--blue)}
+.tbtn.danger{background:#5c1a1a;border-color:var(--red);color:var(--red)}
+.tbtn.danger:hover{background:#7a2020}
+#load-label{font-size:11px;color:var(--text2)}
+
+/* ── iOS Paste modal ──────────────────────────────────── */
+#paste-overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:100;
+               display:none;align-items:center;justify-content:center;padding:16px}
+#paste-overlay.open{display:flex}
+#paste-modal{background:var(--bg2);border:1px solid var(--border2);border-radius:12px;
+             width:100%;max-width:560px;display:flex;flex-direction:column;gap:0;overflow:hidden}
+#paste-modal-header{background:var(--bg3);padding:14px 18px;display:flex;
+                    align-items:center;justify-content:space-between;border-bottom:1px solid var(--border)}
+#paste-modal-header h3{font-size:14px;font-weight:600;color:#fff}
+#paste-close{background:transparent;border:none;color:var(--text2);font-size:20px;
+             cursor:pointer;line-height:1;padding:0 4px}
+#paste-modal-body{padding:16px 18px;display:flex;flex-direction:column;gap:12px}
+#paste-instructions{font-size:12px;color:var(--text2);line-height:1.7;
+                    background:var(--bg3);border-radius:6px;padding:10px 14px;
+                    border-left:3px solid var(--cyan)}
+#paste-instructions b{color:var(--cyan)}
+#paste-instructions code{color:var(--green);font-family:var(--font-mono);font-size:11px}
+#paste-area{background:var(--bg3);border:1px solid var(--border);border-radius:6px;
+            color:var(--text);font-family:var(--font-mono);font-size:11px;
+            padding:10px;width:100%;height:160px;resize:none;line-height:1.5}
+#paste-area:focus{outline:none;border-color:var(--blue)}
+#paste-area::placeholder{color:var(--text3)}
+#paste-status{font-size:11px;min-height:18px;font-family:var(--font-mono)}
+#paste-status.ok{color:var(--green)}
+#paste-status.err{color:var(--red)}
+#paste-modal-footer{padding:12px 18px;display:flex;gap:8px;justify-content:flex-end;
+                    border-top:1px solid var(--border);background:var(--bg3)}
+#paste-auto-hint{font-size:10px;color:var(--text3);align-self:center;flex:1}
+
+/* ── Main layout ──────────────────────────────────────── */
+#main{display:grid;grid-template-columns:280px 1fr;flex:1;overflow:hidden;gap:0}
+
+/* ── Tree panel ───────────────────────────────────────── */
+#tree-panel{border-right:1px solid var(--border);display:flex;flex-direction:column;overflow:hidden}
+#tree-header{background:var(--bg2);padding:6px 10px;font-size:11px;color:var(--text2);
+             border-bottom:1px solid var(--border);display:flex;justify-content:space-between;flex-shrink:0}
+#tree-search{background:var(--bg3);border:1px solid var(--border);border-radius:4px;
+             color:var(--text);font-size:11px;padding:4px 8px;width:100%;margin:6px;width:calc(100% - 12px);flex-shrink:0}
+#tree-search:focus{outline:none;border-color:var(--blue)}
+#tree-body{overflow-y:auto;flex:1;font-family:var(--font-mono);font-size:11px}
+.tree-row{display:flex;align-items:center;padding:2px 4px 2px 0;cursor:pointer;
+          white-space:nowrap;overflow:hidden;user-select:none;gap:2px}
+.tree-row:hover{background:var(--bg3)}
+.tree-row.selected{background:var(--blue2)}
+.tree-row.selected .meta{color:#aac4f8}
+.tr-exp{width:14px;text-align:center;color:var(--text3);flex-shrink:0;font-size:10px}
+.tr-icon{flex-shrink:0;font-size:12px}
+.tr-name{flex:1;overflow:hidden;text-overflow:ellipsis;color:var(--text)}
+.tr-meta{font-size:10px;color:var(--text3);flex-shrink:0;padding-right:6px}
+/* Slack indicator on tree row */
+.tr-slack{width:6px;height:6px;border-radius:50%;flex-shrink:0;margin-right:3px}
+.tr-slack.high{background:var(--red)}
+.tr-slack.med{background:var(--amber)}
+.tr-slack.low{background:var(--green)}
+.tr-slack.none{background:transparent}
+
+/* ── Right panel ──────────────────────────────────────── */
+#right{display:flex;flex-direction:column;overflow:hidden}
+
+/* ── Info strip ───────────────────────────────────────── */
+#info-strip{background:var(--bg2);border-bottom:1px solid var(--border);
+            padding:8px 14px;flex-shrink:0}
+#info-strip h3{font-size:13px;font-weight:500;color:#fff;margin-bottom:6px}
+.info-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+.info-kv{font-size:11px}
+.info-kv .k{color:var(--text2);display:block;font-size:10px}
+.info-kv .v{color:var(--blue);font-family:var(--font-mono)}
+
+/* ── Slack visualizer ─────────────────────────────────── */
+#slack-section{background:var(--bg2);border-bottom:1px solid var(--border);
+               padding:10px 14px;flex-shrink:0}
+#slack-title{font-size:11px;font-weight:600;color:var(--text);margin-bottom:8px;
+             display:flex;align-items:center;gap:8px}
+#slack-bar-wrap{position:relative;height:32px;border-radius:5px;overflow:hidden;
+                border:1px solid var(--border);background:var(--bg3);margin-bottom:6px}
+#slack-bar-used{height:100%;background:linear-gradient(90deg,var(--blue2),var(--blue));
+                transition:width .4s;display:flex;align-items:center;padding-left:8px;
+                font-size:10px;color:#fff;font-family:var(--font-mono);white-space:nowrap;overflow:hidden}
+#slack-bar-slack{position:absolute;top:0;right:0;height:100%;
+                 background:repeating-linear-gradient(45deg,#5c1a1a,#5c1a1a 4px,#7a2020 4px,#7a2020 8px);
+                 display:flex;align-items:center;justify-content:center;
+                 font-size:10px;color:#ffaaaa;font-family:var(--font-mono);transition:width .4s}
+#slack-labels{display:flex;justify-content:space-between;font-size:10px;color:var(--text2);font-family:var(--font-mono)}
+#wipe-controls{display:flex;gap:8px;align-items:center;margin-top:8px;flex-wrap:wrap}
+#wipe-progress{flex:1;height:6px;background:var(--bg3);border-radius:3px;overflow:hidden;min-width:80px}
+#wipe-bar{height:100%;width:0%;background:var(--red);transition:width .05s;border-radius:3px}
+#wipe-status{font-size:10px;color:var(--text2);font-family:var(--font-mono);min-width:120px}
+.wipe-mode-tag{font-size:10px;padding:2px 7px;border-radius:10px;background:#2a1010;
+               color:var(--red);border:1px solid #5c2020}
+
+/* ── Tab bar ──────────────────────────────────────────── */
+#tab-bar{background:var(--bg2);border-bottom:1px solid var(--border);
+         display:flex;padding:0 10px;flex-shrink:0}
+.tab{font-size:11px;padding:7px 14px;cursor:pointer;border-bottom:2px solid transparent;
+     color:var(--text2);transition:color .12s,border-color .12s}
+.tab:hover{color:var(--text)}
+.tab.active{color:var(--blue);border-bottom-color:var(--blue)}
+
+/* ── Hex view ─────────────────────────────────────────── */
+#hex-wrap{flex:1;overflow:auto;font-family:var(--font-mono);font-size:11px}
+#hex-wrap table{border-collapse:collapse;width:100%}
+#hex-wrap th{position:sticky;top:0;background:var(--bg2);padding:5px 8px;
+             text-align:left;color:var(--text2);font-weight:500;font-size:10px;
+             border-bottom:1px solid var(--border);white-space:nowrap}
+#hex-wrap td{padding:2px 8px;white-space:pre;vertical-align:top}
+#hex-wrap tr:hover td{background:var(--bg3)}
+.blk-hdr td{background:var(--bg3)!important;color:var(--text2);font-size:10px;
+            border-top:1px solid var(--border);padding:4px 8px!important}
+.ho{color:var(--text3)}.hb{color:var(--blue)}.ha{color:var(--green)}
+.hb-slack{color:var(--red);background:#3d1010;border-radius:2px}
+.ha-slack{color:#ff8888;background:#3d1010}
+
+/* ── Inode panel ──────────────────────────────────────── */
+#inode-wrap{flex:1;overflow:auto}
+#inode-wrap table{border-collapse:collapse;width:100%;font-family:var(--font-mono);font-size:11px}
+#inode-wrap th{position:sticky;top:0;background:var(--bg2);padding:5px 8px;
+               text-align:left;font-size:10px;color:var(--text2);
+               border-bottom:1px solid var(--border)}
+#inode-wrap td{padding:3px 8px;border-bottom:1px solid var(--border)}
+#inode-wrap tr:hover td{background:var(--bg3)}
+.f-off{color:var(--text3)}.f-name{color:var(--cyan)}.f-val{color:var(--amber)}
+.f-sz{color:var(--text3);font-size:10px}.f-desc{color:var(--text2);font-size:10px;font-family:var(--font-sans)}
+
+/* ── Superblock panel ─────────────────────────────────── */
+#sb-wrap{flex:1;overflow:auto;padding:10px}
+.sb-section{font-size:10px;font-weight:600;color:var(--text3);text-transform:uppercase;
+            letter-spacing:.8px;padding:6px 8px 4px;margin-top:8px}
+.sb-row{display:flex;justify-content:space-between;padding:4px 8px;
+        border-radius:4px;font-family:var(--font-mono);font-size:11px}
+.sb-row:hover{background:var(--bg3)}
+.sb-k{color:var(--text2)}.sb-v{color:var(--amber)}
+.sb-desc{color:var(--text3);font-size:10px;font-family:var(--font-sans);margin-left:12px}
+
+/* ── Block map panel ──────────────────────────────────── */
+#blockmap-wrap{flex:1;overflow:auto;padding:10px}
+#blockmap-grid{display:flex;flex-wrap:wrap;gap:3px;padding:8px}
+.bm-cell{width:14px;height:14px;border-radius:2px;cursor:pointer;
+          transition:transform .1s;border:1px solid transparent}
+.bm-cell:hover{transform:scale(1.4)}
+.bm-used{background:var(--blue);border-color:var(--blue2)}
+.bm-slack{background:var(--red);border-color:#7a1010}
+.bm-dir{background:var(--purple);border-color:#6a4ab8}
+.bm-legend{display:flex;gap:16px;padding:0 8px 8px;font-size:11px;align-items:center}
+.bm-dot{width:10px;height:10px;border-radius:2px;display:inline-block;margin-right:4px}
+
+/* ── Command panel ────────────────────────────────────── */
+#cmd-wrap{flex:1;overflow:auto;padding:12px;font-family:var(--font-mono);font-size:11px}
+.cmd-section{margin-bottom:16px}
+.cmd-section h4{font-size:12px;color:var(--cyan);margin-bottom:8px;font-family:var(--font-sans)}
+.cmd-block{background:var(--bg3);border:1px solid var(--border);border-radius:6px;
+           padding:10px 14px;color:var(--green);white-space:pre-wrap;line-height:1.6}
+.cmd-comment{color:var(--text3)}
+.cmd-note{font-size:11px;color:var(--text2);font-family:var(--font-sans);
+          margin-top:6px;padding-left:4px}
+
+/* ── Welcome screen ───────────────────────────────────── */
+#welcome{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
+         color:var(--text2);gap:12px;padding:20px;text-align:center}
+#welcome h2{font-size:16px;color:var(--text);font-weight:500}
+#welcome p{font-size:12px;max-width:400px;line-height:1.6}
+#welcome .steps{text-align:left;font-size:12px;line-height:2;font-family:var(--font-mono)}
+
+/* Scrollbars */
+::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar-track{background:var(--bg2)}
+::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px}
+</style>
+</head>
+<body>
+
+<!-- Toolbar -->
+<div id="toolbar">
+  <h1>Ext4 Visual Inspector</h1>
+  <span class="sub">Free / Libre</span>
+  <div class="spacer"></div>
+  <span id="load-label">No scan loaded</span>
+  <label class="tbtn primary" style="cursor:pointer">
+    Load scan JSON
+    <input type="file" accept=".json" style="display:none" onchange="loadJSON(this)">
+  </label>
+  <button class="tbtn" onclick="loadDemo()">Load demo</button>
+  <button class="tbtn" onclick="openPasteModal()" title="iOS / no-server mode">📋 Paste JSON</button>
+  <button class="tbtn" id="cmd-btn" onclick="switchTab('cmd')">Bridge commands</button>
+</div>
+
+<!-- Theme bar -->
+<div id="theme-bar">
+  <span>Theme:</span>
+  <div class="th-pill" data-theme="sunday"    onclick="setTheme('sunday')"   title="Sunday — Linen Morning">
+    <div class="th-pill-swatches">
+      <div class="th-swatch" style="background:#faf7f2"></div>
+      <div class="th-swatch" style="background:#5c7a4e"></div>
+      <div class="th-swatch" style="background:#b87030"></div>
+      <div class="th-swatch" style="background:#7c5c9a"></div>
+    </div>
+    <div class="th-day">Sunday</div>
+    <div class="th-label">Linen Morning</div>
+  </div>
+  <div class="th-pill" data-theme="monday"    onclick="setTheme('monday')"   title="Monday — Garden Greenhouse">
+    <div class="th-pill-swatches">
+      <div class="th-swatch" style="background:#f0f5ee"></div>
+      <div class="th-swatch" style="background:#2e6e4e"></div>
+      <div class="th-swatch" style="background:#3a8030"></div>
+      <div class="th-swatch" style="background:#5a6898"></div>
+    </div>
+    <div class="th-day">Monday</div>
+    <div class="th-label">Garden Greenhouse</div>
+  </div>
+  <div class="th-pill" data-theme="tuesday"   onclick="setTheme('tuesday')"  title="Tuesday — Copper Kitchen">
+    <div class="th-pill-swatches">
+      <div class="th-swatch" style="background:#241808"></div>
+      <div class="th-swatch" style="background:#c87830"></div>
+      <div class="th-swatch" style="background:#e0a030"></div>
+      <div class="th-swatch" style="background:#a878a8"></div>
+    </div>
+    <div class="th-day">Tuesday</div>
+    <div class="th-label">Copper Kitchen</div>
+  </div>
+  <div class="th-pill" data-theme="wednesday" onclick="setTheme('wednesday')" title="Wednesday — Blue Willow China">
+    <div class="th-pill-swatches">
+      <div class="th-swatch" style="background:#eef3fa"></div>
+      <div class="th-swatch" style="background:#1a5298"></div>
+      <div class="th-swatch" style="background:#2a7850"></div>
+      <div class="th-swatch" style="background:#5a3a98"></div>
+    </div>
+    <div class="th-day">Wednesday</div>
+    <div class="th-label">Blue Willow China</div>
+  </div>
+  <div class="th-pill" data-theme="thursday"  onclick="setTheme('thursday')" title="Thursday — Autumn Harvest">
+    <div class="th-pill-swatches">
+      <div class="th-swatch" style="background:#281808"></div>
+      <div class="th-swatch" style="background:#e07830"></div>
+      <div class="th-swatch" style="background:#f0b030"></div>
+      <div class="th-swatch" style="background:#b870a0"></div>
+    </div>
+    <div class="th-day">Thursday</div>
+    <div class="th-label">Autumn Harvest</div>
+  </div>
+  <div class="th-pill" data-theme="friday"    onclick="setTheme('friday')"   title="Friday — Parisian Bistro">
+    <div class="th-pill-swatches">
+      <div class="th-swatch" style="background:#fdf8f0"></div>
+      <div class="th-swatch" style="background:#8a1c1c"></div>
+      <div class="th-swatch" style="background:#c88020"></div>
+      <div class="th-swatch" style="background:#6a3878"></div>
+    </div>
+    <div class="th-day">Friday</div>
+    <div class="th-label">Parisian Bistro</div>
+  </div>
+  <div class="th-pill" data-theme="saturday"  onclick="setTheme('saturday')" title="Saturday — Midnight Hacker">
+    <div class="th-pill-swatches">
+      <div class="th-swatch" style="background:#0f1117"></div>
+      <div class="th-swatch" style="background:#4d8ef0"></div>
+      <div class="th-swatch" style="background:#4db87a"></div>
+      <div class="th-swatch" style="background:#9b72e8"></div>
+    </div>
+    <div class="th-day">Saturday</div>
+    <div class="th-label">Midnight Hacker</div>
+  </div>
+</div>
+
+<!-- iOS Paste Modal -->
+<div id="paste-overlay" onclick="overlayClick(event)">
+  <div id="paste-modal">
+    <div id="paste-modal-header">
+      <h3>📋 Paste scan data — iOS / no-server mode</h3>
+      <button id="paste-close" onclick="closePasteModal()">×</button>
+    </div>
+    <div id="paste-modal-body">
+      <div id="paste-instructions">
+        <b>On iPhone / iPad (no server needed):</b><br>
+        1. On a Linux machine, run:<br>
+        <code>./scripts/fs_bridge.sh --folder ~/Documents</code><br>
+        2. Open <code>data/fs_export.json</code> in any text editor<br>
+        3. Select All then Copy<br>
+        4. On your iPhone/iPad, tap the box below and Paste<br><br>
+        <b>Alternative:</b> email yourself the JSON file, open it, copy all, paste here.
+      </div>
+      <textarea id="paste-area"
+        placeholder='Paste your fs_export.json here...&#10;&#10;It starts with: {"version":"1.0","scanMode":...'
+        oninput="validatePaste(this.value)"></textarea>
+      <div id="paste-status"></div>
+    </div>
+    <div id="paste-modal-footer">
+      <span id="paste-auto-hint">Will auto-load when valid JSON is detected</span>
+      <button class="tbtn" onclick="closePasteModal()">Cancel</button>
+      <button class="tbtn primary" id="paste-load-btn" onclick="loadPasted()" disabled>Load data</button>
+    </div>
+  </div>
+</div>
+
+<!-- Main -->
+<div id="main">
+
+  <!-- Left: Tree -->
+  <div id="tree-panel">
+    <div id="tree-header">
+      <span>File / Directory tree</span>
+      <span id="tree-count">—</span>
+    </div>
+    <input id="tree-search" type="text" placeholder="Search files..." oninput="searchTree(this.value)">
+    <div id="tree-body"></div>
+  </div>
+
+  <!-- Right -->
+  <div id="right">
+
+    <!-- Welcome -->
+    <div id="welcome">
+      <h2>Ext4 Visual Inspector</h2>
+      <p style="font-size:10px;color:var(--text3,#555e80);font-style:italic;margin-top:4px">
+        In memory of Kokila — who saw me.
+      </p>
+      <p>A free, open-source tool to visualize filesystem structure, inode data, hex bytes, and slack space — down to the sector level.</p>
+      <div class="steps">
+        <b style="color:var(--cyan)">On Linux:</b><br>
+        1. Run: <span style="color:var(--green)">./scripts/fs_bridge.sh --folder ~/Documents</span><br>
+        2. Click "Load scan JSON" above → select <span style="color:var(--green)">data/fs_export.json</span><br>
+        3. Click any file to inspect it<br><br>
+        <b style="color:var(--amber)">On iPhone / iPad — no server needed:</b><br>
+        1. Run bridge script on Linux → open <span style="color:var(--green)">fs_export.json</span> → Select All → Copy<br>
+        2. On iPhone: tap <span style="color:var(--amber)">📋 Paste JSON</span> above → paste in the box → auto-loads!<br>
+        3. Or email yourself the JSON and copy from the email<br><br>
+        <b style="color:var(--cyan)">On Windows / macOS (demo mode):</b><br>
+        Click <span style="color:var(--amber)">"Load demo"</span> to explore a simulated filesystem
+      </div>
+    </div>
+
+    <!-- Info strip (hidden until selection) -->
+    <div id="info-strip" style="display:none">
+      <h3 id="info-title">—</h3>
+      <div class="info-grid" id="info-grid"></div>
+    </div>
+
+    <!-- Slack visualizer (hidden until file selected) -->
+    <div id="slack-section" style="display:none">
+      <div id="slack-title">
+        Block / slack space map
+        <span class="wipe-mode-tag" id="wipe-mode-tag">visual mode</span>
+      </div>
+      <div id="slack-bar-wrap">
+        <div id="slack-bar-used"></div>
+        <div id="slack-bar-slack"></div>
+      </div>
+      <div id="slack-labels">
+        <span id="sl-used">—</span>
+        <span id="sl-slack" style="color:var(--red)">—</span>
+        <span id="sl-total">—</span>
+      </div>
+      <div id="wipe-controls">
+        <button class="tbtn danger" id="wipe-btn" onclick="startWipe()">▶ Simulate wipe (visual)</button>
+        <div id="wipe-progress"><div id="wipe-bar"></div></div>
+        <span id="wipe-status">—</span>
+        <button class="tbtn" id="wipe-reset" onclick="resetWipe()" style="display:none">Reset</button>
+      </div>
+      <div id="real-wipe-cmd" style="display:none;margin-top:8px;font-size:10px;
+           font-family:var(--font-mono);color:var(--text2);background:var(--bg3);
+           padding:6px 10px;border-radius:4px;border:1px solid var(--border)"></div>
+    </div>
+
+    <!-- Tabs -->
+    <div id="tab-bar" style="display:none">
+      <div class="tab active" id="tab-hex"      onclick="switchTab('hex')">Hex / bytes</div>
+      <div class="tab"        id="tab-inode"    onclick="switchTab('inode')">Inode fields</div>
+      <div class="tab"        id="tab-blockmap" onclick="switchTab('blockmap')">Block map</div>
+      <div class="tab"        id="tab-sb"       onclick="switchTab('sb')">Superblock</div>
+      <div class="tab"        id="tab-cmd"      onclick="switchTab('cmd')">Bridge commands</div>
+    </div>
+
+    <div id="hex-wrap"      style="display:none"><table><thead><tr><th>Sector : Offset</th><th>00 01 02 03 04 05 06 07  08 09 0A 0B 0C 0D 0E 0F</th><th>ASCII / data</th></tr></thead><tbody id="hex-tbody"></tbody></table></div>
+    <div id="inode-wrap"    style="display:none"><table><thead><tr><th>Offset</th><th>Field</th><th>Size</th><th>Value</th><th>Description</th></tr></thead><tbody id="inode-tbody"></tbody></table></div>
+    <div id="blockmap-wrap" style="display:none"><div class="bm-legend"><span><span class="bm-dot bm-used"></span>File data</span><span><span class="bm-dot bm-dir"></span>Directory</span><span><span class="bm-dot bm-slack"></span>Slack space</span></div><div id="blockmap-grid"></div></div>
+    <div id="sb-wrap"       style="display:none"><div id="sb-body"></div></div>
+    <div id="cmd-wrap"      style="display:none" id="cmd-body"><div id="cmd-body"></div></div>
+  </div>
+</div>
+
+<script>
+// ── State ──────────────────────────────────────────────────────
+let fsData = null;
+let selectedNode = null;
+let expanded = new Set();
+let wipeTimer = null;
+let wipedBytes = 0;
+const BLOCK_SIZE = 4096;
+
+// ── Utility ────────────────────────────────────────────────────
+const $ = id => document.getElementById(id);
+const fmtSize = b => {
+  if(b===0) return '0 B';
+  if(b<1024) return b+' B';
+  if(b<1048576) return (b/1024).toFixed(1)+' KB';
+  if(b<1073741824) return (b/1048576).toFixed(2)+' MB';
+  return (b/1073741824).toFixed(2)+' GB';
+};
+const hex2 = n => n.toString(16).toUpperCase().padStart(2,'0');
+const hex8 = n => n.toString(16).toUpperCase().padStart(8,'0');
+
+// ── Load JSON from file ────────────────────────────────────────
+function loadJSON(input) {
+  const file = input.files[0];
+  if(!file) return;
+  // Chrome/Edge block FileReader on file:// protocol (CORS)
+  // Firefox allows it. Safari allows it. Detect and warn.
+  if(window.location.protocol === 'file:' &&
+     /Chrome/.test(navigator.userAgent) &&
+     !/Edg\//.test(navigator.userAgent) === false) {
+    // Edge also uses Chrome UA — both block file://
+    const msg = 'Chrome and Edge block file loading when opened '+
+      'from a local file.\n\nThree solutions:\n'+
+      '1. Use Firefox instead (no restriction)\n'+
+      '2. Run: python3 -m http.server 8080 then open localhost:8080\n'+
+      '3. Use the Paste JSON button — works in every browser always';
+    if(confirm(msg + '\n\nOpen Paste JSON mode now?')) {
+      openPasteModal();
+    }
+    return;
+  }
+  const reader = new FileReader();
+  reader.onload = e => {
+    try {
+      fsData = JSON.parse(e.target.result);
+      $('load-label').textContent = file.name;
+      initFS();
+    } catch(err) {
+      alert('Error reading JSON: ' + err.message);
+    }
+  };
+  reader.onerror = () => {
+    // FileReader failed — likely file:// restriction
+    const msg = 'Could not read the file.\n\n' +
+      'If you opened this page by double-clicking the HTML file,\n' +
+      'your browser may be blocking local file access.\n\n' +
+      'Try the Paste JSON button instead — it works everywhere.';
+    if(confirm(msg + '\n\nOpen Paste JSON mode?')) {
+      openPasteModal();
+    }
+  };
+  reader.readAsText(file);
+}
+
+// ── Demo data ──────────────────────────────────────────────────
+function loadDemo() {
+  fsData = buildDemoData();
+  $('load-label').textContent = 'demo filesystem';
+  initFS();
+}
+
+function buildDemoData() {
+  let id=0;
+  const node = (type,name,inode,size,ext,extra={}) => {
+    const blkCount = Math.max(1,Math.ceil(size/BLOCK_SIZE));
+    const firstBlk = (inode*7+1024)%524288;
+    const slack = size===0?0: size%BLOCK_SIZE===0?0:BLOCK_SIZE-(size%BLOCK_SIZE);
+    const hex = [];
+    const seed = inode*31;
+    const isText = ['txt','log','md','sh',''].includes(ext);
+    for(let i=0;i<256;i++){
+      let b=((seed*i*13+i*7+seed*3)&0xFF);
+      if(isText&&(b<32||b>126)) b=65+(b%58);
+      hex.push(b);
+    }
+    return {id:++id,type,name,inode,size,ext,
+      modified:'2026-0'+(1+(id%9))+'-'+(10+(id%18)),
+      perms:type==='dir'?'rwxr-xr-x':'rw-r--r--',uid:1000,gid:1000,nlinks:type==='dir'?2:1,
+      blocks:[...Array(Math.min(blkCount,256))].map((_,i)=>firstBlk+i),
+      blockCount:blkCount,slack,slackPct:Math.round(slack/BLOCK_SIZE*100),
+      hexSample:hex,path:'',
+      ...extra};
+  };
+  const dir  = (n,inode,extra={}) => ({...node('dir',n,inode,4096,'',extra),children:[]});
+  const file = (n,inode,size,ext,extra={}) => node('file',n,inode,size,ext,extra);
+
+  const root = dir('/',2);
+  const home = dir('home',131073);
+  const user = dir('user',131074);
+  const docs = dir('Documents',131075);
+  const pics = dir('Pictures',131080);
+  const arc  = dir('Archive',131085);
+  const etc  = dir('etc',393217);
+  const net  = dir('network',393220);
+  const varD = dir('var',524289);
+  const log  = dir('log',524290);
+  const tmp  = dir('tmp',655361);
+
+  docs.children = [
+    file('resume.pdf',131076,204800,'pdf'),
+    file('notes.txt',131077,2048,'txt'),
+    file('budget.ods',131078,87040,'ods'),
+    file('contract.pdf',131079,512000,'pdf'),
+    arc,
+  ];
+  arc.children = [
+    file('old_cv.docx',131086,35841,'docx'),
+    file('photo_backup.zip',131087,2097152,'zip'),
+  ];
+  pics.children = [
+    file('photo.jpg',131081,3276800,'jpg'),
+    file('avatar.png',131082,51200,'png'),
+    file('screenshot.png',131083,892928,'png'),
+    file('scan001.jpg',131084,4194304,'jpg'),
+  ];
+  user.children = [
+    docs, pics,
+    file('.bashrc',131088,521,''),
+    file('.vimrc',131089,2049,''),
+  ];
+  home.children = [user];
+
+  net.children = [file('interfaces',393221,320,'')];
+  etc.children = [
+    file('passwd',393218,2500,''),
+    file('fstab',393219,641,''),
+    file('hostname',393222,7,''),
+    net,
+  ];
+
+  log.children = [
+    file('syslog',524291,1048576,'log'),
+    file('auth.log',524292,204801,'log'),
+    file('kern.log',524293,512000,'log'),
+  ];
+  varD.children = [log];
+  tmp.children = [
+    file('tmpfile_001',655362,1,''),
+    file('tmpfile_002',655363,8193,''),
+  ];
+
+  root.children = [home,etc,varD,tmp];
+  expanded.add(root.id); expanded.add(home.id); expanded.add(user.id);
+
+  return {
+    version:'1.0',scanMode:'demo',scanTarget:'demo',
+    scanTime:'2026-03-22 12:00:00',
+    blockSize:BLOCK_SIZE,sectorSize:512,fileCount:40,
+    superblock:{
+      magic:'0xEF53',uuid:'a1b2c3d4-e5f6-7890-abcd-ef1234567890',
+      label:'my_ext4_disk',blockSize:4096,inodeSize:256,
+      totalBlocks:2621440,freeBlocks:1234567,
+      totalInodes:655360,freeInodes:654200,
+      features:'has_journal extents 64bit flex_bg dir_index',
+      note:'Demo mode — all data is simulated for educational purposes.'
+    },
+    tree:root
+  };
+}
+
+// ── Init ───────────────────────────────────────────────────────
+function initFS() {
+  $('welcome').style.display='none';
+  $('tab-bar').style.display='flex';
+  // Update tab label based on filesystem
+  const fsType = (fsData.filesystemInfo&&fsData.filesystemInfo.fsType)||'ext4';
+  const isFAT  = fsType==='fat32'||fsType==='exfat';
+  const fsLabel= fsType==='exfat'?'exFAT':fsType==='fat32'?'FAT32':'Ext4';
+  const metaTab = $('tab-inode');
+  if(metaTab) metaTab.textContent = isFAT?'Dir entry':'Inode fields';
+  // Update page title hint
+  const loadLbl = $('load-label');
+  if(loadLbl && fsData.filesystemInfo)
+    loadLbl.textContent = fsLabel+' — '+fsData.filesystemInfo.fileCount+' items';
+  renderTree();
+  renderSuperblock();
+  renderCommands();
+  switchTab('hex');
+}
+
+// ── Tree ───────────────────────────────────────────────────────
+let searchTerm = '';
+function searchTree(val){ searchTerm=val.toLowerCase(); renderTree(); }
+
+function slackDot(node) {
+  if(node.type==='dir') return '';
+  const pct = node.slackPct||0;
+  const cls = pct===0?'none':pct>50?'high':pct>20?'med':'low';
+  return `<span class="tr-slack ${cls}" title="Slack: ${fmtSize(node.slack||0)} (${pct}%)"></span>`;
+}
+
+function renderTree() {
+  const body = $('tree-body');
+  const rows = [];
+  let count=0;
+  function walk(node,depth){
+    if(searchTerm && !node.name.toLowerCase().includes(searchTerm) &&
+       !(node.children&&node.children.some(c=>c.name.toLowerCase().includes(searchTerm)))) return;
+    count++;
+    const isExp=expanded.has(node.id), isSel=selectedNode&&selectedNode.id===node.id;
+    const hasKids=node.children&&node.children.length>0;
+    const icon=node.type==='dir'?(isExp?'📂':'📁'):({pdf:'📄',jpg:'🖼',png:'🖼',mp3:'🎵',mp4:'🎬',zip:'📦',log:'📋',sh:'⚙',py:'🐍'}[node.ext]||'📄');
+    const div=document.createElement('div');
+    div.className='tree-row'+(isSel?' selected':'');
+    div.style.paddingLeft=(4+depth*14)+'px';
+    div.innerHTML=
+      `<span class="tr-exp">${hasKids?(isExp?'▾':'▸'):''}</span>`+
+      `<span class="tr-icon">${icon}</span>`+
+      slackDot(node)+
+      `<span class="tr-name">${node.name}</span>`+
+      `<span class="tr-meta">${node.type==='file'?fmtSize(node.size):'dir'}</span>`;
+    div.addEventListener('click',()=>{
+      if(hasKids){isExp?expanded.delete(node.id):expanded.add(node.id);}
+      select(node); renderTree();
+    });
+    rows.push(div);
+    if(isExp&&hasKids) node.children.forEach(c=>walk(c,depth+1));
+  }
+  walk(fsData.tree,0);
+  body.innerHTML='';
+  rows.forEach(r=>body.appendChild(r));
+  $('tree-count').textContent=count+' items';
+}
+
+// ── Select ─────────────────────────────────────────────────────
+function select(node) {
+  selectedNode=node;
+  resetWipe();
+  renderInfo(node);
+  renderSlackBar(node);
+  renderHex(node);
+  renderInode(node);
+  renderBlockMap(node);
+  $('info-strip').style.display='block';
+  $('slack-section').style.display = node.type==='file' ? 'block':'none';
+}
+
+// ── Info strip ─────────────────────────────────────────────────
+function renderInfo(n) {
+  const icon = n.type==='dir'?'📁':'📄';
+  $('info-title').textContent=icon+' '+n.name+(n.path?' — '+n.path:'');
+  const sector = (n.blocks&&n.blocks[0])||0;
+  const byteOff = sector*BLOCK_SIZE;
+  // Filesystem-aware terminology
+  const fsType = (fsData&&fsData.filesystemInfo&&fsData.filesystemInfo.fsType)||'ext4';
+  const isFAT  = fsType==='fat32'||fsType==='exfat';
+  const blockUnit = n.blockUnit || (isFAT?'cluster':'block');
+  const metaUnit  = n.metaUnit  || (isFAT?'dir entry':'inode');
+  const blockSize = (fsData&&fsData.filesystemInfo&&fsData.filesystemInfo.blockSize)||BLOCK_SIZE;
+  const kvs=[
+    ['Type',           n.type==='dir'?'Directory':'File ('+n.ext+')'],
+    [metaUnit,         '#'+n.inode],
+    ['Size',           fmtSize(n.size)],
+    ['Slack',          n.slack?fmtSize(n.slack)+' ('+n.slackPct+'%)':'none ✓'],
+    [blockUnit+'s',   (n.blockCount||0)+' × '+fmtSize(blockSize)],
+    ['First '+blockUnit,(n.blocks&&n.blocks[0])||'—'],
+    ['Byte offset',    '0x'+hex8(byteOff)],
+    ['Sector',         (sector*8)],
+    ['Modified',       n.modified||'—'],
+    ['Perms',          n.perms||'—'],
+    ['UID/GID',        (n.uid||0)+'/'+(n.gid||0)],
+  ];
+  $('info-grid').innerHTML=kvs.map(([k,v])=>
+    `<div class="info-kv"><span class="k">${k}</span><span class="v">${v}</span></div>`
+  ).join('');
+  // exFAT cluster slack warning — can be enormous
+  if(n.slackWarning){
+    $('info-grid').innerHTML += `<div class="info-kv" style="grid-column:1/-1">
+      <span class="v" style="color:var(--red);font-size:10px">${n.slackWarning}</span></div>`;
+  }
+}
+
+// ── Slack bar ──────────────────────────────────────────────────
+function renderSlackBar(n) {
+  if(n.type!=='file'){return;}
+  const total = (n.blockCount||1)*BLOCK_SIZE;
+  const slack = n.slack||0;
+  const used  = n.size||0;
+  const usedPct  = (used/total*100).toFixed(1);
+  const slackPct = (slack/total*100).toFixed(1);
+  $('slack-bar-used').style.width=usedPct+'%';
+  $('slack-bar-used').textContent=usedPct>15?fmtSize(used)+' used':'';
+  $('slack-bar-slack').style.width=slackPct+'%';
+  $('slack-bar-slack').textContent=slackPct>8?fmtSize(slack)+' slack':'';
+  $('sl-used').textContent='Used: '+fmtSize(used);
+  $('sl-slack').textContent='Slack: '+fmtSize(slack)+' ('+n.slackPct+'%)';
+  $('sl-total').textContent='Total allocated: '+fmtSize(total);
+  $('wipe-status').textContent=slack===0?'No slack space':'Ready to wipe '+fmtSize(slack);
+  $('wipe-btn').disabled=slack===0;
+  // Show real wipe command
+  if(slack>0 && n.path){
+    $('real-wipe-cmd').style.display='block';
+    $('real-wipe-cmd').textContent='# Real wipe (Linux only):\n./scripts/ext4_wipe_slack.sh --file "'+n.path+'"';
+  }
+}
+
+// ── Wiper (visual simulation) ──────────────────────────────────
+function startWipe() {
+  if(!selectedNode||selectedNode.type!=='file') return;
+  const slack = selectedNode.slack||0;
+  if(slack===0) return;
+  wipedBytes=0;
+  $('wipe-btn').disabled=true;
+  $('wipe-reset').style.display='inline';
+  $('wipe-mode-tag').textContent='visual mode — simulating';
+  const total=slack;
+  const interval=Math.max(10,Math.floor(500/total*16));
+  const step=Math.max(1,Math.floor(total/200));
+  wipeTimer=setInterval(()=>{
+    wipedBytes=Math.min(wipedBytes+step,total);
+    const pct=wipedBytes/total*100;
+    $('wipe-bar').style.width=pct+'%';
+    $('wipe-status').textContent='Wiping… '+wipedBytes+' / '+total+' bytes ('+Math.round(pct)+'%)';
+    // Update hex display to show zeros in slack area
+    renderHex(selectedNode, wipedBytes);
+    if(wipedBytes>=total){
+      clearInterval(wipeTimer);
+      $('wipe-bar').style.background='var(--green)';
+      $('wipe-status').textContent='✓ '+fmtSize(total)+' bytes zeroed (simulated)';
+      $('wipe-mode-tag').textContent='visual mode — wiped';
+    }
+  },interval);
+}
+
+function resetWipe() {
+  if(wipeTimer) clearInterval(wipeTimer);
+  wipedBytes=0;
+  $('wipe-bar').style.width='0%';
+  $('wipe-bar').style.background='var(--red)';
+  if($('wipe-mode-tag')) $('wipe-mode-tag').textContent='visual mode';
+  if($('wipe-reset')) $('wipe-reset').style.display='none';
+  if($('wipe-btn')) { $('wipe-btn').disabled=false; }
+  if($('wipe-status')) $('wipe-status').textContent=selectedNode?'Ready to wipe '+(selectedNode.slack?fmtSize(selectedNode.slack):'0 B'):'—';
+  if(selectedNode) renderHex(selectedNode,0);
+}
+
+// ── Hex view ───────────────────────────────────────────────────
+function renderHex(node, wipedSlackBytes=0) {
+  const tbody=$('hex-tbody');
+  tbody.innerHTML='';
+  const hexData = node.hexSample||[];
+  const blockSize=BLOCK_SIZE, sectorSize=512;
+  const blocks = node.blocks||[0];
+  const fileSize = node.size||0;
+  const slack = node.slack||0;
+
+  // Show up to 3 blocks
+  for(let blk=0;blk<Math.min(blocks.length,3);blk++){
+    const blockNum=blocks[blk];
+    const sector=blockNum*8;
+    const byteBase=blockNum*blockSize;
+    // Header
+    const hdr=document.createElement('tr');
+    hdr.className='blk-hdr';
+    hdr.innerHTML=`<td colspan="3">Block ${blockNum}  ·  Sectors ${sector}–${sector+7}  ·  Byte offset 0x${hex8(byteBase)}${blk===blocks.length-1&&slack>0?' ← last block — contains '+fmtSize(slack)+' slack':''}</td>`;
+    tbody.appendChild(hdr);
+
+    const bytesPerBlock=256; // we display 256 bytes per block
+    const bytes=blk===0&&hexData.length>0
+      ? hexData.slice(0,bytesPerBlock)
+      : pseudoBytes(node,blk,bytesPerBlock);
+
+    for(let row=0;row<16;row++){
+      const rowBytes=bytes.slice(row*16,row*16+16);
+      const byteOffset=blk*256+row*16;
+      // Determine which bytes are slack
+      const fileByteStart=(blk===blocks.length-1)?(fileSize % blockSize)||0:blockSize;
+      const rowGlobal=blk*blockSize+row*16;
+
+      let hexStr='', ascStr='';
+      rowBytes.forEach((b,i)=>{
+        const globalByte=rowGlobal+i;
+        const isSlackByte = blk===blocks.length-1 && (fileSize%blockSize!==0) &&
+                            (globalByte>=(blk*blockSize+(fileSize%blockSize))) &&
+                            b!==undefined;
+        const isWiped = isSlackByte && wipedSlackBytes>0 &&
+                        (globalByte - (blk*blockSize+(fileSize%blockSize))) < wipedSlackBytes;
+        const bval = isWiped ? 0 : b;
+        const hh=hex2(bval);
+        const ac=(bval>=32&&bval<127)?String.fromCharCode(bval):'.';
+        if(isWiped){
+          hexStr+=`<span class="hb-slack" title="Wiped (was slack)">00</span>`;
+          ascStr+=`<span class="ha-slack">·</span>`;
+        } else if(isSlackByte){
+          hexStr+=`<span class="hb-slack" title="Slack space byte">${hh}</span>`;
+          ascStr+=`<span class="ha-slack">${ac}</span>`;
+        } else {
+          hexStr+=hh;
+          ascStr+=ac;
+        }
+        if(i===7) hexStr+='  '; else if(i<15) hexStr+=' ';
+      });
+
+      const sOff=(sector+Math.floor(row*16/512));
+      const bOff=(row*16)%512;
+      const tr=document.createElement('tr');
+      tr.innerHTML=`<td class="ho">${sOff}:${bOff.toString(16).padStart(3,'0').toUpperCase()}</td><td class="hb">${hexStr}</td><td class="ha">${ascStr}</td>`;
+      tbody.appendChild(tr);
+    }
+  }
+
+  if(blocks.length>3){
+    const more=document.createElement('tr');
+    more.innerHTML=`<td colspan="3" style="padding:6px 8px;color:var(--text2);font-size:10px">… ${blocks.length-3} more blocks · ${fmtSize((blocks.length-3)*BLOCK_SIZE)} · last block contains ${fmtSize(slack)} slack</td>`;
+    tbody.appendChild(more);
+  }
+}
+
+function pseudoBytes(node,blkIdx,count=256){
+  const seed=node.inode*31+blkIdx*17;
+  const isText=['txt','log','md','sh',''].includes(node.ext||'');
+  const bytes=[];
+  for(let i=0;i<count;i++){
+    let b=((seed*i*13+i*7+seed*3)&0xFF);
+    if(isText&&(b<32||b>126)) b=65+(b%58);
+    bytes.push(b);
+  }
+  return bytes;
+}
+
+// ── Inode fields ───────────────────────────────────────────────
+const INODE_FIELDS=[
+  ['0x00','i_mode',      '2','File type + permissions','rwxr-xr-x, 0o100644 etc.'],
+  ['0x02','i_uid',       '2','Owner user ID (low 16 bits)','User 0=root, 1000=first user'],
+  ['0x04','i_size_lo',   '4','File size in bytes (low 32 bits)','Upper 32 bits in i_size_hi'],
+  ['0x08','i_atime',     '4','Last access time (Unix epoch)','Seconds since 1970-01-01'],
+  ['0x0C','i_ctime',     '4','Inode change time','Updated on chmod, chown, link'],
+  ['0x10','i_mtime',     '4','Last data modification time','Updated on write'],
+  ['0x14','i_dtime',     '4','Deletion time','Non-zero means file is deleted'],
+  ['0x18','i_gid',       '2','Owner group ID (low 16 bits)','0=root, 1000=first group'],
+  ['0x1A','i_links_count','2','Hard link count','0 = no directory references'],
+  ['0x1C','i_blocks_lo', '4','Allocated 512-byte blocks (low)','Includes overhead blocks'],
+  ['0x20','i_flags',     '4','Inode flags','0x80000=extents, 0x10000=inline data'],
+  ['0x28','i_block',     '60','Block map / extent tree (15 × 4 B)','Or extent header if extents flag set'],
+  ['0x64','i_generation','4','File version number (NFS)','Incremented on each unlink'],
+  ['0x68','i_file_acl_lo','4','Extended attributes block','0 if no xattrs'],
+  ['0x6C','i_size_hi',   '4','File size upper 32 bits','For files > 4 GB'],
+  ['0x74','i_obso_faddr','4','Obsolete fragment address','Always 0 in Ext4'],
+  ['0x80','i_extra_isize','2','Extra inode size past 128 B','Typically 28 (0x1C)'],
+  ['0x82','i_checksum_hi','2','Upper 16 bits of inode checksum','Metadata integrity'],
+  ['0x84','i_ctime_extra','4','Change time extra bits','Sub-second precision'],
+  ['0x88','i_mtime_extra','4','Mtime extra bits','Sub-second precision'],
+  ['0x9C','i_uid_hi',    '2','Owner UID upper 16 bits','For UID > 65535'],
+  ['0x9E','i_gid_hi',    '2','Owner GID upper 16 bits','For GID > 65535'],
+];
+
+function renderInode(n) {
+  const tbody=$('inode-tbody');
+  tbody.innerHTML='';
+  const fsType=(fsData&&fsData.filesystemInfo&&fsData.filesystemInfo.fsType)||'ext4';
+  const isFAT=fsType==='fat32'||fsType==='exfat';
+  if(isFAT){
+    // FAT/exFAT: show Directory Entry fields instead of inode
+    const blockSize=(fsData&&fsData.filesystemInfo&&fsData.filesystemInfo.blockSize)||4096;
+    const clusterNum=(n.blocks&&n.blocks[0])||0;
+    const FAT_FIELDS=[
+      ['0x00','DIR_Name',      '11','Short filename (8.3 format)','e.g. README  TXT'],
+      ['0x0B','DIR_Attr',      '1', 'Attributes byte','0x10=dir, 0x20=archive, 0x01=readonly'],
+      ['0x0C','DIR_NTRes',     '1', 'Reserved (Windows NT)','Case info for long filenames'],
+      ['0x0D','DIR_CrtTimeTenth','1','Creation time tenths of second','0–199'],
+      ['0x0E','DIR_CrtTime',   '2', 'Creation time','Hours/minutes/seconds packed'],
+      ['0x10','DIR_CrtDate',   '2', 'Creation date','Year/month/day packed'],
+      ['0x12','DIR_LstAccDate','2', 'Last access date','Date only — no time'],
+      ['0x14','DIR_FstClusHI', '2', 'First cluster number (high 16 bits)','exFAT/FAT32 only'],
+      ['0x16','DIR_WrtTime',   '2', 'Last write time','Packed 2-second resolution'],
+      ['0x18','DIR_WrtDate',   '2', 'Last write date','Packed date'],
+      ['0x1A','DIR_FstClusLO', '2', 'First cluster number (low 16 bits)','Points to start of file data'],
+      ['0x1C','DIR_FileSize',  '4', 'File size in bytes','0 for directories'],
+    ];
+    const vals={
+      DIR_Name:       n.name.toUpperCase().replace('.','').slice(0,11).padEnd(11,' '),
+      DIR_Attr:       n.type==='dir'?'0x10 (directory)':'0x20 (archive)',
+      DIR_NTRes:      '0x00',
+      DIR_CrtTimeTenth:'0x00',
+      DIR_CrtTime:    '0x'+Math.floor(Date.now()/1000%65536).toString(16).toUpperCase().padStart(4,'0'),
+      DIR_CrtDate:    '0x'+Math.floor(Date.now()/86400000%65536).toString(16).toUpperCase().padStart(4,'0'),
+      DIR_LstAccDate: '0x'+Math.floor(Date.now()/86400000%65536).toString(16).toUpperCase().padStart(4,'0'),
+      DIR_FstClusHI:  '0x'+((clusterNum>>16)&0xFFFF).toString(16).toUpperCase().padStart(4,'0'),
+      DIR_WrtTime:    '0x'+Math.floor(Date.now()/1000%65536).toString(16).toUpperCase().padStart(4,'0'),
+      DIR_WrtDate:    '0x'+Math.floor(Date.now()/86400000%65536).toString(16).toUpperCase().padStart(4,'0'),
+      DIR_FstClusLO:  '0x'+(clusterNum&0xFFFF).toString(16).toUpperCase().padStart(4,'0'),
+      DIR_FileSize:   '0x'+hex8(n.size||0)+' ('+fmtSize(n.size||0)+')',
+    };
+    FAT_FIELDS.forEach(([off,name,sz,desc,tip])=>{
+      const tr=document.createElement('tr');
+      tr.innerHTML=`<td class="f-off">${off}</td><td class="f-name">${name}</td><td class="f-sz">${sz} B</td><td class="f-val">${vals[name]||'—'}</td><td class="f-desc" title="${tip||''}">${desc}</td>`;
+      tbody.appendChild(tr);
+    });
+    // Cluster slack note
+    const slack=n.slack||0;
+    if(slack>0){
+      const tr=document.createElement('tr');
+      tr.style.background='rgba(224,85,85,0.08)';
+      tr.innerHTML=`<td class="f-off" colspan="2" style="color:var(--red)">Cluster slack</td><td class="f-sz">—</td><td class="f-val" style="color:var(--red)">${fmtSize(slack)} unused</td><td class="f-desc">The last cluster allocated is only ${n.size%blockSize||blockSize} bytes used of ${fmtSize(blockSize)} allocated. The remaining ${fmtSize(slack)} may contain old data.</td>`;
+      tbody.appendChild(tr);
+    }
+    return;
+  }
+  const blkCount=(n.blockCount||1)*8;
+  const mtime=Math.floor(Date.now()/1000);
+  const vals={
+    i_mode:   '0x'+(n.type==='dir'?'41ED':'81A4')+' ('+n.perms+')',
+    i_uid:    String(n.uid||1000),
+    i_size_lo:'0x'+hex8(n.size||0)+' ('+fmtSize(n.size||0)+')',
+    i_atime:  '0x'+hex8(mtime)+' ('+n.modified+')',
+    i_ctime:  '0x'+hex8(mtime)+' ('+n.modified+')',
+    i_mtime:  '0x'+hex8(mtime)+' ('+n.modified+')',
+    i_dtime:  '0x00000000 (not deleted)',
+    i_gid:    String(n.gid||1000),
+    i_links_count:String(n.nlinks||1),
+    i_blocks_lo:'0x'+hex8(blkCount)+' ('+blkCount+' × 512 B)',
+    i_flags:  '0x00080000 (extents enabled)',
+    i_block:  (n.blocks||[]).slice(0,4).map(b=>'0x'+hex8(b)).join(' ')+(((n.blocks||[]).length>4)?'…':''),
+    i_generation:'0xA4B2C1D3',
+    i_file_acl_lo:'0x00000000',
+    i_size_hi:'0x'+hex8(Math.floor((n.size||0)/0x100000000)),
+    i_obso_faddr:'0x00000000',
+    i_extra_isize:'0x001C (28 bytes)',
+    i_checksum_hi:'0x'+((n.inode*0x1234)&0xFFFF).toString(16).toUpperCase().padStart(4,'0'),
+    i_ctime_extra:'0x'+hex8(0),
+    i_mtime_extra:'0x'+hex8(0),
+    i_uid_hi:'0x0000',
+    i_gid_hi:'0x0000',
+  };
+  INODE_FIELDS.forEach(([off,name,sz,desc,tip])=>{
+    const tr=document.createElement('tr');
+    tr.innerHTML=`<td class="f-off">${off}</td><td class="f-name">${name}</td><td class="f-sz">${sz} B</td><td class="f-val">${vals[name]||'—'}</td><td class="f-desc" title="${tip||''}">${desc}</td>`;
+    tbody.appendChild(tr);
+  });
+}
+
+// ── Block map ──────────────────────────────────────────────────
+function renderBlockMap(n) {
+  const grid=$('blockmap-grid');
+  grid.innerHTML='';
+  if(!n.blocks||n.blocks.length===0){grid.innerHTML='<p style="color:var(--text2);padding:12px">No blocks</p>';return;}
+  const isDir=n.type==='dir';
+  n.blocks.forEach((blk,i)=>{
+    const isLast=i===n.blocks.length-1;
+    const hasSlack=isLast&&(n.slack||0)>0;
+    const cell=document.createElement('div');
+    cell.className='bm-cell '+(isDir?'bm-dir':hasSlack?'bm-slack':'bm-used');
+    cell.title=`Block ${blk} · sector ${blk*8} · offset 0x${hex8(blk*BLOCK_SIZE)}${hasSlack?' · contains '+fmtSize(n.slack)+' slack':''}`;
+    cell.addEventListener('click',()=>{ switchTab('hex'); });
+    grid.appendChild(cell);
+  });
+  const info=document.createElement('p');
+  info.style.cssText='font-size:10px;color:var(--text2);padding:4px 8px';
+  info.textContent=`${n.blocks.length} blocks × 4096 B = ${fmtSize(n.blocks.length*BLOCK_SIZE)} allocated · file uses ${fmtSize(n.size||0)} · ${fmtSize(n.slack||0)} slack`;
+  grid.appendChild(info);
+}
+
+// ── Superblock ─────────────────────────────────────────────────
+function renderSuperblock() {
+  if(!fsData) return;
+  const sb=fsData.superblock||{};
+  const fi=fsData.filesystemInfo||{};
+  const fsType=(fi.fsType||'ext4').toLowerCase();
+  const isFAT=fsType==='fat32'||fsType==='exfat';
+  // FAT32/exFAT: show volume info instead of superblock
+  if(isFAT){
+    const sections=[
+      ['Volume info',[
+        ['Filesystem type',fi.fsType||fsType,''],
+        ['Cluster size',((fi.blockSize||4096)/1024).toFixed(0)+' KB','Allocation unit size'],
+        ['Max file size',sb.maxFileSize||'—','Hard limit of this filesystem'],
+        ['Max partition',sb.maxPartition||'—','Hard limit of this filesystem'],
+        ['Journaling',sb.journaling?'Yes':'No','FAT32/exFAT have no journal'],
+        ['Case sensitive',sb.caseSensitive?'Yes':'No','FAT is case-insensitive'],
+      ]],
+      ['Capacity',[
+        ['Total size',fmtSize(fi.totalBytes||0),'Total partition size'],
+        ['Used',fmtSize(fi.usedBytes||0),'Space in use'],
+        ['Free',fmtSize(fi.freeBytes||0),'Available space'],
+      ]],
+      ['Scan info',[
+        ['Scanned path',fi.scanTarget||'—',''],
+        ['Scan time',fi.scanTime||'—',''],
+        ['Files found',(fi.fileCount||0).toLocaleString(),''],
+        ['Note',sb.note||'—',''],
+      ]],
+    ];
+    let html='';
+    sections.forEach(([title,rows])=>{
+      html+=`<div class="sb-section">${title}</div>`;
+      rows.forEach(([k,v,d])=>{
+        html+=`<div class="sb-row"><span class="sb-k">${k}</span><span style="flex:1"></span><span class="sb-desc">${d}</span><span class="sb-v" style="margin-left:16px">${v}</span></div>`;
+      });
+    });
+    $('sb-body').innerHTML=html;
+    return;
+  }
+  // Ext4 superblock (original)
+  const sections=[
+    ['Identity',[
+      ['Magic number',sb.magic||'0xEF53','Identifies this as Ext2/3/4'],
+      ['UUID',sb.uuid||'—','Universally unique filesystem ID'],
+      ['Volume label',sb.label||'(none)','Human-readable name'],
+    ]],
+    ['Size & capacity',[
+      ['Block size',(sb.blockSize||4096)+' bytes','Usually 4096 (2^12)'],
+      ['Inode size',(sb.inodeSize||256)+' bytes','256 in modern Ext4'],
+      ['Total blocks',(sb.totalBlocks||0).toLocaleString(),'Data + metadata blocks'],
+      ['Free blocks',(sb.freeBlocks||0).toLocaleString(),'Available for new data'],
+      ['Total inodes',(sb.totalInodes||0).toLocaleString(),'Max possible files'],
+      ['Free inodes',(sb.freeInodes||0).toLocaleString(),'Available for new files'],
+    ]],
+    ['Layout',[
+      ['First data block',sb.firstDataBlock||0,'Block 0 on 4K block size'],
+      ['Journal inode',sb.journalInode||8,'inode #8 = journal file'],
+      ['Inodes per group','8192','Fixed layout unit'],
+      ['Blocks per group','32768','Block group size'],
+    ]],
+    ['Features',[
+      ['Features',sb.features||'has_journal extents 64bit flex_bg','Active feature flags'],
+      ['Note',sb.note||'—',''],
+    ]],
+  ];
+  let html='';
+  sections.forEach(([title,rows])=>{
+    html+=`<div class="sb-section">${title}</div>`;
+    rows.forEach(([k,v,d])=>{
+      html+=`<div class="sb-row"><span class="sb-k">${k}</span><span style="flex:1"></span><span class="sb-desc">${d}</span><span class="sb-v" style="margin-left:16px">${v}</span></div>`;
+    });
+  });
+  $('sb-body').innerHTML=html;
+}
+
+// ── Commands panel ─────────────────────────────────────────────
+function renderCommands() {
+  $('cmd-wrap').innerHTML=`
+<div class="cmd-section">
+  <h4>Step 1 — Run the bridge script on Linux</h4>
+  <div class="cmd-block"><span class="cmd-comment"># Scan a folder (no root needed)</span>
+./scripts/fs_bridge.sh --folder ~/Documents
+
+<span class="cmd-comment"># Scan a mounted USB drive</span>
+./scripts/fs_bridge.sh --mount /mnt/usb
+
+<span class="cmd-comment"># Scan a disk partition (needs sudo)</span>
+sudo ./scripts/fs_bridge.sh --partition /dev/sdb1
+
+<span class="cmd-comment"># Scan with options</span>
+./scripts/fs_bridge.sh --folder ~/Documents --max-files 10000 --no-hex</div>
+  <p class="cmd-note">Output: data/fs_export.json — load this file using the button above.</p>
+</div>
+
+<div class="cmd-section">
+  <h4>Step 2 — Wipe slack space (real mode, Linux only)</h4>
+  <div class="cmd-block"><span class="cmd-comment"># Dry run — see what would be wiped (safe)</span>
+./scripts/ext4_wipe_slack.sh --dry-run --folder ~/Documents
+
+<span class="cmd-comment"># Wipe slack on one file</span>
+./scripts/ext4_wipe_slack.sh --file ~/Documents/resume.pdf
+
+<span class="cmd-comment"># Wipe entire folder (3-pass DoD 5220.22-M style)</span>
+./scripts/ext4_wipe_slack.sh --folder ~/Documents --passes 3
+
+<span class="cmd-comment"># Wipe from a list of files</span>
+./scripts/ext4_wipe_slack.sh --list files_to_wipe.txt</div>
+  <p class="cmd-note">⚠ Real wipe modifies your disk. Always --dry-run first. Works on any Linux filesystem.</p>
+</div>
+
+<div class="cmd-section">
+  <h4>Serve the UI locally</h4>
+  <div class="cmd-block"><span class="cmd-comment"># Start local web server from project root</span>
+python3 -m http.server 8080
+
+<span class="cmd-comment"># Then open in browser:</span>
+http://localhost:8080/ui/index.html</div>
+</div>
+
+<div class="cmd-section">
+  <h4>Install dependencies (Ubuntu / Debian)</h4>
+  <div class="cmd-block">sudo apt install e2fsprogs xxd python3 coreutils</div>
+</div>`;
+}
+
+// ── Tab switching ──────────────────────────────────────────────
+function switchTab(t) {
+  ['hex','inode','blockmap','sb','cmd'].forEach(id=>{
+    const el=$(id+'-wrap')||$('cmd-wrap');
+    if($( id+'-wrap')) $(id+'-wrap').style.display=id===t?'block':'none';
+    if($(id+'-wrap')&&id==='hex') $(id+'-wrap').style.display=id===t?'block':'none';
+    const tab=$('tab-'+id);
+    if(tab) tab.classList.toggle('active',id===t);
+  });
+  if(t==='cmd') $('cmd-wrap').style.display='block';
+  // Specifically handle display flex for hex (it's a table)
+  if($('hex-wrap')) $('hex-wrap').style.display=t==='hex'?'block':'none';
+}
+
+// ── Theme system ───────────────────────────────────────────────
+const THEMES = ['sunday','monday','tuesday','wednesday','thursday','friday','saturday'];
+const DAY_NAMES = ['sunday','monday','tuesday','wednesday','thursday','friday','saturday'];
+
+function setTheme(name) {
+  document.documentElement.setAttribute('data-theme', name);
+  // Update active pill
+  document.querySelectorAll('.th-pill').forEach(p => {
+    p.classList.toggle('active', p.dataset.theme === name);
+  });
+  // Persist
+  try { localStorage.setItem('ext4_theme', name); } catch(e){}
+  // Update toolbar title color
+  const accent = getComputedStyle(document.documentElement).getPropertyValue('--th-accent').trim();
+  const h1 = document.querySelector('#toolbar h1');
+  if(h1 && accent) h1.style.color = accent;
+}
+
+function initTheme() {
+  // Try saved preference first
+  let saved = null;
+  try { saved = localStorage.getItem('ext4_theme'); } catch(e){}
+  // Fall back to today's day of week
+  const todayTheme = DAY_NAMES[new Date().getDay()];
+  const theme = (saved && THEMES.includes(saved)) ? saved : todayTheme;
+  setTheme(theme);
+}
+
+initTheme();
+
+// ── First-timer welcome banner ────────────────────────────────
+(function() {
+  let seen = false;
+  try { seen = localStorage.getItem('ext4_welcomed') === '1'; } catch(e){}
+  if(seen) return;
+
+  const overlay = document.createElement('div');
+  overlay.style.cssText = [
+    'position:fixed','inset:0','z-index:200',
+    'background:rgba(0,0,0,0.75)',
+    'display:flex','align-items:center','justify-content:center',
+    'padding:20px','font-family:var(--font-sans,sans-serif)',
+  ].join(';');
+
+  overlay.innerHTML = `
+    <div style="background:var(--bg2,#181c27);border:1px solid var(--border2,#3d4468);
+                border-radius:12px;max-width:480px;width:100%;overflow:hidden">
+      <div style="background:var(--bg3,#1e2235);padding:14px 20px;
+                  border-bottom:1px solid var(--border,#2e3450);
+                  display:flex;align-items:center;gap:10px">
+        <span style="font-size:20px">👋</span>
+        <span style="font-size:14px;font-weight:500;color:#fff">
+          Welcome — read this first
+        </span>
+      </div>
+      <div style="padding:18px 20px;font-size:12px;
+                  color:var(--text2,#8891b8);line-height:1.8">
+
+        <div style="background:var(--bg3,#1e2235);border-radius:8px;
+                    padding:10px 14px;margin-bottom:14px;
+                    border-left:3px solid #4db87a">
+          <b style="color:#4db87a">This browser tool is 100% safe.</b><br>
+          It is read-only. Click everything freely.
+          Nothing on your computer will change.
+        </div>
+
+        <div style="margin-bottom:10px">
+          <b style="color:var(--text,#c8cde8)">If you are new here, start with:</b><br>
+          Click <b style="color:#4d8ef0">Load demo</b> — explore a
+          simulated filesystem with no risk whatsoever.
+        </div>
+
+        <div style="background:var(--bg3,#1e2235);border-radius:8px;
+                    padding:10px 14px;margin-bottom:14px;
+                    border-left:3px solid #e8a53a">
+          <b style="color:#e8a53a">Linux scripts need care.</b><br>
+          The wipe script writes to disk. Always run with
+          <b style="color:#4db87a">--dry-run</b> first.<br>
+          Always check your disk with <b style="color:#4db87a">lsblk</b>
+          before using <b style="color:#4db87a">--partition</b> mode.<br>
+          Read <b style="color:#4d8ef0">WARNINGS.md</b> before running any script.
+        </div>
+
+        <div style="margin-bottom:6px">
+          <b style="color:var(--text,#c8cde8)">The three safe first steps:</b><br>
+          1. Click <b>Load demo</b> and explore freely<br>
+          2. Try each tab — hex view, inode, block map<br>
+          3. Try the wipe simulator — it changes nothing
+        </div>
+      </div>
+      <div style="padding:12px 20px;border-top:1px solid var(--border,#2e3450);
+                  display:flex;gap:10px;justify-content:flex-end;
+                  background:var(--bg3,#1e2235)">
+        <label style="display:flex;align-items:center;gap:6px;
+                       font-size:11px;color:var(--text2,#8891b8);
+                       cursor:pointer;flex:1">
+          <input type="checkbox" id="wb-dont-show">
+          Don't show again
+        </label>
+        <button onclick="closeWelcome()" style="
+          font-size:12px;padding:6px 20px;
+          border:1px solid var(--blue2,#2a5cbf);
+          border-radius:6px;background:var(--blue2,#2a5cbf);
+          color:#fff;cursor:pointer">
+          Got it — let me explore
+        </button>
+      </div>
+    </div>`;
+
+  document.body.appendChild(overlay);
+
+  window.closeWelcome = function() {
+    const dontShow = document.getElementById('wb-dont-show');
+    if(dontShow && dontShow.checked) {
+      try { localStorage.setItem('ext4_welcomed','1'); } catch(e){}
+    }
+    overlay.remove();
+  };
+
+  // Also close on background click
+  overlay.addEventListener('click', function(e) {
+    if(e.target === overlay) closeWelcome();
+  });
+})();
+
+// ── Startup: detect Chrome on file:// and show a gentle notice
+(function() {
+  if(window.location.protocol !== 'file:') return;
+  const isChromium = !!window.chrome || /Chrome/.test(navigator.userAgent);
+  if(!isChromium) return;
+  // Nudge user toward paste mode or python server
+  const hint = document.createElement('div');
+  hint.style.cssText = [
+    'position:absolute','top:60px','right:12px',
+    'background:#FAEEDA','color:#633806',
+    'border:1px solid #EF9F27','border-radius:8px',
+    'padding:8px 14px','font-size:11px',
+    'font-family:var(--font-sans,sans-serif)',
+    'max-width:280px','z-index:50','line-height:1.5',
+  ].join(';');
+  hint.innerHTML = '<b>Chrome tip:</b> To load scan JSON files, ' +
+    'use <b>Paste JSON</b> or serve via ' +
+    '<code>python3 -m http.server 8080</code>. ' +
+    'Firefox has no such restriction. ' +
+    '<span onclick="this.parentNode.remove()" ' +
+    'style="cursor:pointer;float:right;margin-left:8px">✕</span>';
+  // Only show if body exists
+  setTimeout(() => {
+    if(document.body) document.body.appendChild(hint);
+    setTimeout(() => { if(hint.parentNode) hint.remove(); }, 8000);
+  }, 1000);
+})();
+
+// Init tabs hidden until a panel is shown
+['hex-wrap','inode-wrap','blockmap-wrap','sb-wrap'].forEach(id=>{
+  const el=$(id); if(el) el.style.display='none';
+});
+$('cmd-wrap').style.display='none';
+
+// ── iOS Paste Modal ────────────────────────────────────────────
+let pasteValidJSON = null;
+let autoLoadTimer = null;
+
+function openPasteModal() {
+  document.getElementById('paste-overlay').classList.add('open');
+  // Focus textarea after short delay (important for iOS)
+  setTimeout(() => {
+    const ta = document.getElementById('paste-area');
+    if(ta) ta.focus();
+  }, 200);
+}
+
+function closePasteModal() {
+  document.getElementById('paste-overlay').classList.remove('open');
+  pasteValidJSON = null;
+  document.getElementById('paste-area').value = '';
+  document.getElementById('paste-status').textContent = '';
+  document.getElementById('paste-status').className = '';
+  document.getElementById('paste-load-btn').disabled = true;
+  if(autoLoadTimer) clearTimeout(autoLoadTimer);
+}
+
+function overlayClick(e) {
+  if(e.target === document.getElementById('paste-overlay')) closePasteModal();
+}
+
+function validatePaste(text) {
+  const status = document.getElementById('paste-status');
+  const btn = document.getElementById('paste-load-btn');
+  pasteValidJSON = null;
+  if(autoLoadTimer) clearTimeout(autoLoadTimer);
+
+  const trimmed = text.trim();
+  if(!trimmed) {
+    status.textContent = '';
+    status.className = '';
+    btn.disabled = true;
+    return;
+  }
+
+  // Quick pre-check before full parse
+  if(!trimmed.startsWith('{')) {
+    status.textContent = '✗ Not valid JSON — should start with {';
+    status.className = 'err';
+    btn.disabled = true;
+    return;
+  }
+
+  try {
+    const parsed = JSON.parse(trimmed);
+
+    // Validate it looks like our format
+    if(!parsed.tree) {
+      status.textContent = '✗ JSON loaded but missing "tree" field — is this an fs_export.json file?';
+      status.className = 'err';
+      btn.disabled = true;
+      return;
+    }
+
+    // Success
+    pasteValidJSON = parsed;
+    const fileCount = parsed.fileCount || '?';
+    const scanTarget = parsed.scanTarget || 'unknown';
+    const scanTime = parsed.scanTime || '';
+    status.textContent = '✓ Valid scan data — ' + fileCount + ' items from "' + scanTarget + '" ' + scanTime;
+    status.className = 'ok';
+    btn.disabled = false;
+
+    // Auto-load after 1.2 seconds if still valid (convenience for iOS paste)
+    autoLoadTimer = setTimeout(() => {
+      if(pasteValidJSON) loadPasted();
+    }, 1200);
+
+  } catch(e) {
+    // Try to give a helpful location hint
+    const msg = e.message || '';
+    const posMatch = msg.match(/position (\d+)/);
+    if(posMatch) {
+      const pos = parseInt(posMatch[1]);
+      const around = trimmed.substring(Math.max(0,pos-20), pos+20);
+      status.textContent = '✗ JSON parse error near: …' + around + '…';
+    } else {
+      status.textContent = '✗ Invalid JSON: ' + msg.slice(0,80);
+    }
+    status.className = 'err';
+    btn.disabled = true;
+  }
+}
+
+function loadPasted() {
+  if(!pasteValidJSON) return;
+  if(autoLoadTimer) clearTimeout(autoLoadTimer);
+  fsData = pasteValidJSON;
+  const src = pasteValidJSON.scanTarget || 'pasted data';
+  document.getElementById('load-label').textContent = '📋 ' + src;
+  closePasteModal();
+  initFS();
+}
+
+// ── Clipboard auto-detect on modal open (desktop convenience) ──
+// On desktop browsers, check clipboard when modal opens
+async function tryClipboard() {
+  try {
+    if(navigator.clipboard && navigator.clipboard.readText) {
+      const text = await navigator.clipboard.readText();
+      if(text && text.trim().startsWith('{') && text.includes('"tree"')) {
+        document.getElementById('paste-area').value = text;
+        validatePaste(text);
+      }
+    }
+  } catch(e) {
+    // Clipboard permission denied — that's fine, user pastes manually
+  }
+}
+
+</script>
+</body>
+</html>
